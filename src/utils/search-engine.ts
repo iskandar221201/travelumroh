@@ -11,6 +11,14 @@ export class SearchEngine {
         lastIntents: string[][];
         detectedEntities: Set<string>;
     };
+    private keywordFuse: any;
+    private CORE_KEYWORDS = [
+        'umroh', 'haji', 'paket', 'kontak', 'alamat', 'assalamualaikum',
+        'biaya', 'harga', 'syarat', 'dokumen', 'lokasi', 'kantor',
+        'daftar', 'registrasi', 'layanan', 'fasilitas', 'promo',
+        'hemat', 'eksklusif', 'premium', 'jadwal', 'keberangkatan',
+        'pendaftaran', 'berkas', 'hubungi', 'nomor', 'wa', 'whatsapp'
+    ];
 
     private phoneticMap: Record<string, string[]> = {
         'umroh': ['omroh', 'umro', 'umrokh', 'unroh'],
@@ -22,6 +30,7 @@ export class SearchEngine {
         'manasik': ['manasik', 'nasik', 'mansik'],
         'kantor': ['kantor', 'kanter', 'kntr'],
         'alamat': ['alamat', 'lamat', 'lmmat'],
+        'assalam': ['assalam', 'assalamualaikum', 'asslmualiakum', 'asalam', 'asalamuallaikum', 'ass', 'salam'],
     };
 
     private semanticMap: Record<string, string[]> = {
@@ -65,12 +74,29 @@ export class SearchEngine {
             useExtendedSearch: true,
             findAllMatches: true
         }) : null;
+
+        this.keywordFuse = Fuse ? new Fuse(this.CORE_KEYWORDS, {
+            threshold: 0.35,
+            distance: 100,
+            location: 0,
+            includeScore: true
+        }) : null;
     }
 
     private autoCorrect(word: string): string {
+        // 1. Manual map check (high priority for specific shorthand or extreme cases)
         for (const [correct, typos] of Object.entries(this.phoneticMap)) {
             if (typos.includes(word)) return correct;
         }
+
+        // 2. Fuzzy keyword check (automatic normalization)
+        if (this.keywordFuse) {
+            const results = this.keywordFuse.search(word);
+            if (results.length > 0 && results[0].score < 0.35) {
+                return results[0].item;
+            }
+        }
+
         return word;
     }
 
