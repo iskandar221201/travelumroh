@@ -43,12 +43,6 @@
             "rekomendasi",
             "terbaik",
             "paling laku",
-            "recommended",
-            "paket",
-            "ada",
-            "tersedia",
-            "slot",
-            "35.5 juta",
             "thaif"
         ]
     },
@@ -68,14 +62,7 @@
             "9 hari",
             "5 bintang",
             "bisnis",
-            "paling mahal",
             "termahal",
-            "terbaik",
-            "paket",
-            "ada",
-            "tersedia",
-            "slot",
-            "42.5 juta",
             "business class"
         ]
     },
@@ -88,13 +75,9 @@
         "keywords": [
             "alamat",
             "kantor",
-            "dimana",
             "lokasi",
             "office",
             "cirebon",
-            "jalan",
-            "buka",
-            "jam",
             "banjarwangunan",
             "mundu"
         ]
@@ -105,16 +88,12 @@
         "url": "/#services",
         "category": "Informasi",
         "keywords": [
-            "masih ada",
-            "tersedia",
             "slot",
             "jadwal",
             "keberangkatan",
-            "kapan",
-            "bulan",
+            "kuota",
             "maret",
             "april",
-            "kuota",
             "kosong",
             "penuh"
         ]
