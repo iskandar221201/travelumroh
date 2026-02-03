@@ -12,6 +12,14 @@ export class SearchEngine {
         lastIntents: string[][];
         detectedEntities: Set<string>;
     };
+    private keywordFuse: any;
+    private CORE_KEYWORDS = [
+        'umroh', 'haji', 'paket', 'kontak', 'alamat', 'assalamualaikum',
+        'biaya', 'harga', 'syarat', 'dokumen', 'lokasi', 'kantor',
+        'daftar', 'registrasi', 'layanan', 'fasilitas', 'promo',
+        'hemat', 'eksklusif', 'premium', 'jadwal', 'keberangkatan',
+        'pendaftaran', 'berkas', 'hubungi', 'nomor', 'wa', 'whatsapp'
+    ];
 
     private phoneticMap: Record<string, string[]> = {
         'umroh': ['omroh', 'umro', 'umrokh', 'unroh'],
@@ -23,8 +31,6 @@ export class SearchEngine {
         'manasik': ['manasik', 'nasik', 'mansik', 'manasek'],
         'kantor': ['kantor', 'kanter', 'kntr'],
         'alamat': ['alamat', 'lamat', 'lmmat'],
-        'booking': ['booking', 'boking', 'pesan'],
-        'promo': ['promo', 'diskon', 'potongan'],
     };
 
     private semanticMap: Record<string, string[]> = {
@@ -117,6 +123,13 @@ export class SearchEngine {
             useExtendedSearch: true,
             findAllMatches: true
         }) : null;
+
+        this.keywordFuse = Fuse ? new Fuse(this.CORE_KEYWORDS, {
+            threshold: 0.35,
+            distance: 100,
+            location: 0,
+            includeScore: true
+        }) : null;
     }
 
     // Levenshtein distance for fuzzy spell checking
@@ -146,46 +159,10 @@ export class SearchEngine {
 
     // Advanced auto-correct with fuzzy matching
     private autoCorrect(word: string): string {
-        // Exact phonetic match
         for (const [correct, typos] of Object.entries(this.phoneticMap)) {
             if (typos.includes(word)) return correct;
         }
-
-        // Fuzzy match for close spellings (distance <= 2)
-        let bestMatch = word;
-        let minDistance = 3;
-
-        for (const correct of Object.keys(this.phoneticMap)) {
-            const distance = this.levenshteinDistance(word, correct);
-            if (distance < minDistance && distance <= 2) {
-                minDistance = distance;
-                bestMatch = correct;
-            }
-        }
-
-        return bestMatch;
-    }
-
-    // Normalize with synonyms
-    private normalizeSynonyms(word: string): string {
-        return this.synonymMap[word] || word;
-    }
-
-    // Detect multi-word phrase patterns
-    private detectPhrases(tokens: string[]): { intent: string; boost: number }[] {
-        const detected: { intent: string; boost: number }[] = [];
-
-        for (const phrasePattern of this.phrasePatterns) {
-            const pattern = phrasePattern.pattern;
-            for (let i = 0; i <= tokens.length - pattern.length; i++) {
-                const slice = tokens.slice(i, i + pattern.length);
-                if (JSON.stringify(slice) === JSON.stringify(pattern)) {
-                    detected.push({ intent: phrasePattern.intent, boost: phrasePattern.boost });
-                }
-            }
-        }
-
-        return detected;
+        return word;
     }
 
     private extractEntities(words: string[]) {
