@@ -128,12 +128,25 @@ export class SearchEngine {
         if (processed.entities.isReguler && item.title.includes('Reguler')) score += 15;
         if (processed.entities.isLocation && item.category === 'Kontak') score += 15;
 
-        if (this.history.lastCategory === item.category) score += 5;
+        if (this.history.lastCategory === item.category) score += 10;
+
+        // Intent-based boosting (Massive boost if item matches detected intent)
+        const intent = this.detectIntent(processed);
+        if (intent === 'kontak' && item.category === 'Kontak') score += 50;
+        if (intent === 'alamat' && item.category === 'Kontak') score += 50;
+        if ((intent === 'paket_vip' || intent === 'paket_reguler' || intent === 'paket_umum') && (item.category === 'Paket' || item.category === 'Layanan')) score += 30;
+
+        // Context-aware boosting (if last interaction was about VIP, boost VIP items)
+        this.history.detectedEntities.forEach(entity => {
+            if (entity === 'isVIP' && item.title.includes('VIP')) score += 10;
+            if (entity === 'isReguler' && item.title.includes('Reguler')) score += 10;
+        });
 
         // Direct keyword hit on title/category (Very important for single word queries)
         processed.tokens.forEach((token: string) => {
-            if (item.title.toLowerCase().includes(token)) score += 15;
-            if (item.category.toLowerCase().includes(token)) score += 20;
+            if (item.title.toLowerCase().includes(token)) score += 20;
+            if (item.category.toLowerCase().includes(token)) score += 25;
+            if (item.keywords?.some((k: string) => k.toLowerCase() === token)) score += 15;
         });
 
         return score;
@@ -144,7 +157,7 @@ export class SearchEngine {
         let candidates: any[] = [];
 
         if (this.fuse) {
-            const fuseResults = this.fuse.search(processed.expanded.join(' '));
+            const fuseResults = this.fuse.search(processed.expanded.join(' | '));
             candidates = fuseResults.map((f: any) => ({
                 item: f.item,
                 fuseScore: f.score
@@ -178,12 +191,13 @@ export class SearchEngine {
     }
 
     private detectIntent(processed: any): string {
+        const words = processed.tokens;
+        if (processed.entities.isContact || words.includes('kontak') || words.includes('hubungi')) return 'kontak';
         if (processed.entities.isVIP) return 'paket_vip';
         if (processed.entities.isReguler) return 'paket_reguler';
-        if (processed.entities.isLocation) return 'alamat';
-        if (processed.entities.isContact) return 'kontak';
-        if (processed.tokens.includes('paket')) return 'paket_umum';
-        if (processed.tokens.includes('layanan')) return 'layanan';
+        if (processed.entities.isLocation || words.includes('kantor') || words.includes('alamat')) return 'alamat';
+        if (words.includes('paket') || words.includes('harga') || words.includes('biaya')) return 'paket_umum';
+        if (words.includes('layanan') || words.includes('fasilitas')) return 'layanan';
         return 'fuzzy';
     }
 }

@@ -21,6 +21,8 @@ export class SearchController {
         shownLeadCapture: false,
     };
 
+    private chatHistory: { type: 'user' | 'assistant', text: string, result?: SearchResult }[] = [];
+
     private testimonials = [
         { name: "Bu Siti", city: "Cirebon", text: "Pelayanannya luar biasa!" },
         { name: "Pak Ahmad", city: "Jakarta", text: "Pembimbing sangat berpengalaman!" },
@@ -43,6 +45,7 @@ export class SearchController {
 
         this.initEventListeners();
         this.exposeGlobals();
+        this.loadHistory();
     }
 
     private initEventListeners() {
@@ -92,6 +95,8 @@ export class SearchController {
         window.toggleSearch = () => this.openSearch();
         // @ts-ignore
         window.downloadImage = (url: string, filename: string) => this.downloadImage(url, filename);
+        // @ts-ignore
+        window.clearSearchHistory = () => this.clearHistory();
     }
 
     public openSearch() {
@@ -152,7 +157,7 @@ export class SearchController {
         });
     }
 
-    private addUserMessage(text: string) {
+    private addUserMessage(text: string, save = true) {
         if (!this.messagesList) return;
         const div = document.createElement("div");
         div.className = "flex justify-end gap-4 opacity-0 translate-y-2 transition-all duration-300";
@@ -160,11 +165,51 @@ export class SearchController {
         this.messagesList.appendChild(div);
         setTimeout(() => div.classList.remove("opacity-0", "translate-y-2"), 10);
         this.scrollToBottom();
+
+        if (save) {
+            this.chatHistory.push({ type: 'user', text });
+            this.saveHistory();
+        }
     }
 
-    private addAssistantMessage(query: string, result: SearchResult) {
+    private saveHistory() {
+        localStorage.setItem('al_bait_chat_history', JSON.stringify(this.chatHistory));
+    }
+
+    private loadHistory() {
+        const saved = localStorage.getItem('al_bait_chat_history');
+        if (saved && this.messagesList) {
+            try {
+                const history = JSON.parse(saved);
+                this.chatHistory = history;
+                this.chatHistory.forEach(msg => {
+                    if (msg.type === 'user') {
+                        this.addUserMessage(msg.text, false);
+                    } else if (msg.type === 'assistant' && msg.result) {
+                        this.addAssistantMessage(msg.text, msg.result, false);
+                    }
+                });
+            } catch (e) {
+                console.error("Failed to load history", e);
+            }
+        }
+    }
+
+    private clearHistory() {
+        this.chatHistory = [];
+        localStorage.removeItem('al_bait_chat_history');
+        if (this.messagesList) this.messagesList.innerHTML = '';
+        this.scrollToBottom();
+    }
+
+    private addAssistantMessage(query: string, result: SearchResult, save = true) {
         const { intent, results, confidence } = result;
         this.conversationContext.interactionCount++;
+
+        if (save) {
+            this.chatHistory.push({ type: 'assistant', text: query, result });
+            this.saveHistory();
+        }
 
         const div = document.createElement("div");
         div.className = "flex gap-4 opacity-0 translate-y-2 transition-all duration-500";
@@ -230,10 +275,13 @@ export class SearchController {
             .slice(0, 3)
             .map((item) => `
                 <a href="${item.url}" class="action-chip flex items-center justify-between gap-3 p-4 bg-white hover:bg-primary/5 rounded-2xl border border-gray-100 hover:border-primary/40 transition-all group w-full shadow-sm hover:shadow-md">
-                    <div class="text-left">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="text-[8px] font-black text-white bg-primary px-1.5 py-0.5 rounded uppercase tracking-widest">${item.category}</span>
-                            ${item.is_recommended ? '<span class="text-[8px] font-black text-white bg-amber-500 px-1.5 py-0.5 rounded uppercase">Bestseller</span>' : ""}
+                    <div class="text-left w-full">
+                        <div class="flex items-center justify-between mb-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[8px] font-black text-white bg-primary px-1.5 py-0.5 rounded uppercase tracking-widest">${item.category}</span>
+                                ${item.is_recommended ? '<span class="text-[8px] font-black text-white bg-amber-500 px-1.5 py-0.5 rounded uppercase">Bestseller</span>' : ""}
+                            </div>
+                            ${item.price_numeric && item.price_numeric > 0 ? `<span class="text-[10px] font-bold text-primary">Rp ${(item.price_numeric / 1000000).toFixed(1)}Jt-an</span>` : ""}
                         </div>
                         <h4 class="font-bold text-dark text-sm sm:text-base leading-tight group-hover:text-primary transition-colors">${item.title}</h4>
                     </div>
