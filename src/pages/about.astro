@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import AboutDetail from "../components/About.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Footer from "../components/Footer.astro";
+import { Shield, CheckCircle2, History } from "lucide-react";
+---
+
+<Layout title="Tentang Kami - AL-BAIT TOUR & TRAVEL">
+    <Navbar />
+
+    <main class="pt-20">
+        <!-- Header Section -->
+        <section class="bg-primary py-20 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1565552684305-79438d6dfd3a?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"
+            >
+            </div>
+            <div class="container mx-auto px-4 relative z-10 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Tentang Kami
+                </h1>
+                <p class="text-accent-light text-xl font-medium">
+                    Mengenal Lebih Dekat Al-Bait Tour & Travel
+                </p>
+            </div>
+        </section>
+
+        <AboutDetail />
+
+        <!-- Vision Mission -->
+        <section class="py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div
+                        class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow text-center"
+                    >
+                        <div
+                            class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-accent"
+                        >
+                            <History className="w-8 h-8" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Misi</h3>
+                        <p class="text-gray-600">
+                            Menyediakan layanan perjalanan ibadah yang aman,
+                            nyaman, dan berkualitas tinggi bagi seluruh
+                            masyarakat.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-primary p-10 rounded-3xl shadow-xl text-center text-white md:scale-110"
+                    >
+                        <div
+                            class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-accent-light"
+                        >
+                            <Shield className="w-8 h-8" />
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Visi</h3>
+                        <p class="text-gray-100">
+                            Menjadi biro perjalanan umroh dan haji pilihan utama
+                            yang dikenal karena amanah dan kualitas
+                            pelayanannya.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow text-center"
+                    >
+                        <div
+                            class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-accent"
+                        >
+                            <CheckCircle2 className="w-8 h-8" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">
+                            Komitmen
+                        </h3>
+                        <p class="text-gray-600">
+                            Terus berinovasi meningkatkan fasilitas dan
+                            bimbingan ibadah agar jamaah dapat beribadah lebih
+                            khusyuk.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <Testimonials />
+    </main>
+
+    <Footer />
+</Layout>

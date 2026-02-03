@@ -1,0 +1,37 @@
+---
+import "../styles/global.css";
+import "@fontsource/inter";
+import "@fontsource/playfair-display";
+import SearchOverlay from "../components/SearchOverlay.astro";
+import TrustBadge from "../components/TrustBadge.astro";
+import FloatingAssistant from "../components/FloatingAssistant.astro";
+import SmartToasts from "../components/SmartToasts.astro";
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const {
+	title,
+	description = "Travel Umroh Cirebon - AL-BAIT TOUR & TRAVEL. Perjalanan ibadah amanah & nyaman.",
+} = Astro.props;
+---
+
+<html lang="id" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+	</head>
+	<body class="antialiased">
+		<slot />
+		<SearchOverlay />
+		<TrustBadge />
+		<FloatingAssistant />
+		<SmartToasts />
+	</body>
+</html>

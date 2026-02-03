@@ -1,0 +1,79 @@
+---
+import { Star, Quote } from "lucide-react";
+
+const testimonials = [
+    {
+        name: "H. Ahmad Fauzi",
+        role: "Jamaah Umroh 2024",
+        content:
+            "Alhamdulillah perjalanan umroh bersama Al-Bait sangat memuaskan. Muthawifnya sangat membimbing, hotelnya dekat, dan makanannya enak-enak. Sangat recommended untuk warga Cirebon.",
+        rating: 5,
+        date: "Jan 2024",
+    },
+    {
+        name: "Hj. Siti Aminah",
+        role: "Jamaah Umroh Plus Turki",
+        content:
+            "Pelayanan sangat ramah dan profesional. Sejak pendaftaran sampai kepulangan diurus dengan baik. Terima kasih Al-Bait Tour telah mewujudkan impian saya dan keluarga.",
+        rating: 5,
+        date: "Dec 2023",
+    },
+    {
+        name: "Budi Santoso",
+        role: "Jamaah Umroh Ramadhan",
+        content:
+            "Pengalaman pertama umroh yang tak terlupakan. Fasilitas sesuai dengan yang dijanjikan. Ibadah jadi lebih khusyuk karena pembimbingnya sangat sabar.",
+        rating: 5,
+        date: "Mar 2024",
+    },
+];
+---
+
+<section id="testimonials" class="py-20 bg-white overflow-hidden">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-accent font-bold tracking-wider text-sm uppercase"
+                >Testimoni Jamaah</span
+            >
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">
+                Apa Kata Mereka?
+            </h2>
+            <p class="text-gray-600">
+                Kepercayaan jamaah adalah prioritas utama kami. Berikut adalah
+                pengalaman mereka beribadah bersama Al-Bait Tour.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8">
+            {
+                testimonials.map((item) => (
+                    <div class="w-full md:w-[calc(33.333%-2rem)] min-w-[300px] bg-gray-50 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300">
+                        <Quote className="absolute top-6 right-6 w-10 h-10 text-accent/20" />
+
+                        <div class="flex gap-1 mb-4">
+                            {[...Array(item.rating)].map(() => (
+                                <Star className="w-4 h-4 text-accent fill-current" />
+                            ))}
+                        </div>
+
+                        <p class="text-gray-600 italic mb-6 leading-relaxed">
+                            "{item.content}"
+                        </p>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                {item.name.charAt(0)}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark text-sm">
+                                    {item.name}
+                                </h4>
+                                <p class="text-xs text-gray-500">{item.role}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

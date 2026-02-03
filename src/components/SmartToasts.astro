@@ -1,0 +1,112 @@
+---
+import { ShoppingCart, Users, TrendingUp } from "lucide-react";
+---
+
+<div
+    id="toast-container"
+    class="fixed left-6 top-24 z-50 flex flex-col gap-3 pointer-events-none"
+>
+    <!-- Toasts will be injected here -->
+</div>
+
+<script>
+    const container = document.getElementById("toast-container");
+
+    const events = [
+        {
+            type: "booking",
+            text: "Pendaftaran baru dari Jakarta",
+            icon: "Users",
+        },
+        {
+            type: "view",
+            text: "5 orang sedang melihat Paket VIP",
+            icon: "TrendingUp",
+        },
+        {
+            type: "booking",
+            text: "Seseorang baru saja booking Paket Hemat",
+            icon: "ShoppingCart",
+        },
+        {
+            type: "trending",
+            text: "Paket Ramadhan sedang tren hari ini",
+            icon: "TrendingUp",
+        },
+        {
+            type: "view",
+            text: "Jamaah Cirebon antusias dengan Tour Al-Aqsa",
+            icon: "Users",
+        },
+    ];
+
+    function createToast(event: any) {
+        if (!container) return;
+
+        const toast = document.createElement("div");
+        toast.className =
+            "bg-white/90 backdrop-blur-md border border-gray-100 px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 animate-slide-in-left opacity-0 translate-x-[-20px] transition-all duration-500 max-w-[280px] pointer-events-auto";
+
+        let iconHtml = "";
+        if (event.icon === "Users")
+            iconHtml =
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
+        else if (event.icon === "TrendingUp")
+            iconHtml =
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>';
+        else
+            iconHtml =
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>';
+
+        toast.innerHTML = `
+            <div class="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center shrink-0">
+                ${iconHtml}
+            </div>
+            <span class="text-xs font-bold text-dark leading-tight">${event.text}</span>
+        `;
+
+        container.appendChild(toast);
+
+        // Trigger animation
+        setTimeout(() => {
+            toast.classList.remove("opacity-0", "translate-x-[-20px]");
+        }, 10);
+
+        // Remove after 5 seconds
+        setTimeout(() => {
+            toast.classList.add("opacity-0", "translate-x-[-20px]");
+            setTimeout(() => toast.remove(), 500);
+        }, 5000);
+    }
+
+    function scheduleNextToast() {
+        const delay = Math.random() * 15000 + 10000; // 10-25 seconds
+        setTimeout(() => {
+            const event = events[Math.floor(Math.random() * events.length)];
+            createToast(event);
+            scheduleNextToast();
+        }, delay);
+    }
+
+    // Initial toast after 5 seconds
+    setTimeout(() => {
+        createToast(events[0]);
+        scheduleNextToast();
+    }, 5000);
+</script>
+
+<style>
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .animate-slide-in-left {
+        animation: slideInLeft 0.5s ease-out forwards;
+    }
+</style>

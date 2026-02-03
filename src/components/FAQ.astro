@@ -1,0 +1,89 @@
+---
+import { Plus, Minus } from "lucide-react";
+
+const faqs = [
+    {
+        question: "Apa saja dokumen yang perlukan untuk pendaftaran Umroh?",
+        answer: "Dokumen utama yang diperlukan adalah Paspor dengan masa berlaku minimal 7 bulan, KTP, KK, Buku Nikah (suami-istri), Akta Lahir (anak), dan Pas Foto terbaru. Tim kami akan membantu proses verifikasi dokumen Anda.",
+    },
+    {
+        question: "Apakah jadwal keberangkatan bisa berubah?",
+        answer: "Jadwal bisa mengalami penyesuaian tergantung kebijakan maskapai dan visa. Namun, kami selalu berupaya memberikan informasi perubahan seawal mungkin kepada jamaah.",
+    },
+    {
+        question: "Bagaimana sistem pembayaran Umroh di Al-Bait?",
+        answer: "Pembayaran dapat dilakukan dengan DP (Down Payment) terlebih dahulu untuk booking seat, dan pelunasan dilakukan maksimal 30 hari sebelum keberangkatan. Kami menerima transfer bank resmi perusahaan.",
+    },
+    {
+        question: "Apakah ada bimbingan manasik sebelum berangkat?",
+        answer: "Ya, kami menyelenggarakan manasik umroh minimal 1 kali pertemuan teori dan praktik sebelum keberangkatan, agar jamaah memahami tata cara ibadah sesuai sunnah.",
+    },
+];
+---
+
+<section id="faq" class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-16">
+            <span class="text-accent font-bold tracking-wider text-sm uppercase"
+                >Tanya Jawab</span
+            >
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">
+                Pertanyaan Umum
+            </h2>
+            <p class="text-gray-600">
+                Informasi yang sering ditanyakan seputar pendaftaran dan
+                pelaksanaan ibadah umroh.
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            {
+                faqs.map((faq, index) => (
+                    <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
+                        <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none faq-btn"
+                            aria-expanded="false"
+                            aria-controls={`faq-${index}`}
+                        >
+                            <span class="font-bold text-dark">
+                                {faq.question}
+                            </span>
+                            <span class="text-primary icon-wrapper">
+                                <Plus className="plus-icon w-5 h-5 block" />
+                                <Minus className="minus-icon w-5 h-5 hidden" />
+                            </span>
+                        </button>
+                        <div
+                            id={`faq-${index}`}
+                            class="hidden px-6 py-4 bg-white text-gray-600 leading-relaxed border-t border-gray-100 faq-content"
+                        >
+                            {faq.answer}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    // Simple vanilla JS for accordion
+    const faqBtns = document.querySelectorAll(".faq-btn");
+
+    faqBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const content = btn.nextElementSibling;
+            const plusIcon = btn.querySelector(".plus-icon");
+            const minusIcon = btn.querySelector(".minus-icon");
+
+            if (content && plusIcon && minusIcon) {
+                // Toggle current
+                content.classList.toggle("hidden");
+                plusIcon.classList.toggle("hidden");
+                plusIcon.classList.toggle("block");
+                minusIcon.classList.toggle("hidden");
+                minusIcon.classList.toggle("block");
+            }
+        });
+    });
+</script>

@@ -1,0 +1,132 @@
+---
+import { Check, ArrowRight } from "lucide-react";
+
+const packages = [
+    {
+        name: "Paket Reguler",
+        duration: "9 Hari",
+        price: "Rp 28.5 Juta",
+        color: "border-gray-200",
+        bg: "bg-white",
+        btn: "bg-primary text-white hover:bg-primary/90",
+        features: [
+            "Tiket Pesawat PP (Economy)",
+            "Hotel *3 (Mekkah & Madinah)",
+            "Makan 3x Sehari (Menu Indo)",
+            "Visa Umroh & Asuransi",
+            "Handling Bandara & Transportasi Bus AC",
+            "Muthawif Berpengalaman",
+        ],
+    },
+    {
+        name: "Paket VIP",
+        duration: "12 Hari",
+        price: "Rp 35.5 Juta",
+        color: "border-accent",
+        bg: "bg-white ring-2 ring-accent relative",
+        badge: "Terlaris",
+        btn: "bg-accent text-dark hover:bg-accent-light",
+        features: [
+            "Tiket Pesawat PP (Direct)",
+            "Hotel *4 (Dekat Masjid)",
+            "Makan 3x Sehari (Fullboard)",
+            "Visa Umroh & Asuransi Premium",
+            "Handling Prioritas & Lounge",
+            "Muthawif & Tour Leader",
+            "City Tour Thaif",
+        ],
+    },
+    {
+        name: "Paket Eksklusif",
+        duration: "9 Hari",
+        price: "Rp 42.5 Juta",
+        color: "border-gray-200",
+        bg: "bg-white",
+        btn: "bg-dark text-white hover:bg-black",
+        features: [
+            "Tiket Pesawat PP (Business)",
+            "Hotel *5 (Depan Pelataran)",
+            "Makan 3x Sehari (International)",
+            "Visa Umroh & Asuransi Platinum",
+            "Private Transport (GMC/Alphard)",
+            "Private Muthawif",
+            "Dokumentasi Eksklusif",
+        ],
+    },
+];
+---
+
+<section id="services" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-accent font-bold tracking-wider text-sm uppercase"
+                >Paket Pilihan</span
+            >
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">
+                Pilih Paket Umroh Terbaik
+            </h2>
+            <p class="text-gray-600">
+                Kami menyediakan berbagai pilihan paket umroh yang dapat
+                disesuaikan dengan kebutuhan dan anggaran Anda.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                packages.map((pkg) => (
+                    <div
+                        class={`rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl flex flex-col ${pkg.bg} ${pkg.color} border`}
+                    >
+                        {pkg.badge && (
+                            <div class="absolute top-0 right-0 bg-accent text-dark text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                                {pkg.badge}
+                            </div>
+                        )}
+
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-dark mb-2">
+                                {pkg.name}
+                            </h3>
+                            <div class="text-sm text-gray-500 font-medium mb-4">
+                                {pkg.duration}
+                            </div>
+                            <div class="text-3xl font-bold text-primary">
+                                {pkg.price}
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">
+                                Start from Jakarta
+                            </p>
+                        </div>
+
+                        <div class="space-y-4 mb-8 flex-grow">
+                            {pkg.features.map((feature) => (
+                                <div class="flex items-start gap-3">
+                                    <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                                    <span class="text-sm text-gray-600">
+                                        {feature}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <a
+                            href={`https://wa.me/6281222442100?text=Assalamualaikum,%20saya%20tertarik%20dengan%20${pkg.name}`}
+                            target="_blank"
+                            class={`w-full py-3 rounded-xl font-bold text-center flex items-center justify-center gap-2 transition-all ${pkg.btn}`}
+                        >
+                            Pilih Paket
+                            <ArrowRight className="w-4 h-4" />
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="mt-12 text-center">
+            <p class="text-gray-500 text-sm">
+                *Harga dan jadwal dapat berubah sewaktu-waktu mengikuti
+                kebijakan maskapai dan hotel.
+            </p>
+        </div>
+    </div>
+</section>

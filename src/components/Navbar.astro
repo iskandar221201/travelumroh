@@ -1,0 +1,188 @@
+---
+import { Menu, X, Phone, Search, Sparkles } from "lucide-react";
+---
+
+<header
+    class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300"
+    id="navbar"
+>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="/" class="flex items-center gap-2 group">
+                    <div
+                        class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-accent"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-6 h-6"
+                        >
+                            <path d="M12 2L2 22h20L12 2zm0 3.5L19 20H5l7-14.5z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="font-serif text-xl font-bold text-primary leading-tight"
+                            >AL-BAIT</span
+                        >
+                        <span
+                            class="text-[0.6rem] tracking-widest text-dark font-medium uppercase"
+                            >Tour & Travel</span
+                        >
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Search Bar Trigger -->
+            <div class="hidden lg:flex flex-1 max-w-xs mx-8">
+                <button
+                    id="search-trigger-bar"
+                    class="w-full flex items-center gap-3 px-4 py-2 bg-white/50 border border-primary/20 rounded-xl text-gray-500 hover:border-primary/50 hover:bg-white hover:shadow-[0_0_15px_rgba(15,81,50,0.1)] transition-all text-sm group relative overflow-hidden"
+                >
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                    </div>
+                    <Search className="w-4 h-4 text-primary relative z-10" />
+                    <span class="relative z-10 font-medium"
+                        >Tanya AI Al-Bait...</span
+                    >
+                    <Sparkles
+                        className="w-3.5 h-3.5 text-accent animate-pulse relative z-10"
+                    />
+                    <span
+                        class="ml-auto text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded relative z-10"
+                        >Ctrl K</span
+                    >
+                </button>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <a
+                    href="/"
+                    class="text-dark hover:text-primary font-medium transition-colors"
+                    >Beranda</a
+                >
+                <a
+                    href="/about"
+                    class="text-dark hover:text-primary font-medium transition-colors"
+                    >Tentang Kami</a
+                >
+                <a
+                    href="/services"
+                    class="text-dark hover:text-primary font-medium transition-colors"
+                    >Paket Umroh</a
+                >
+                <a
+                    href="/contact"
+                    class="text-dark hover:text-primary font-medium transition-colors"
+                    >Kontak</a
+                >
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:flex items-center">
+                <a
+                    href="https://wa.me/6281222442100?text=Assalamualaikum,%20saya%20ingin%20info%20lebih%20lanjut%20mengenai%20paket%20umroh."
+                    target="_blank"
+                    class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                    <Phone className="w-4 h-4" />
+                    <span>Hubungi Kami</span>
+                </a>
+            </div>
+
+            <!-- Mobile/Tablet Menu Button -->
+            <div class="lg:hidden flex items-center">
+                <button
+                    id="search-trigger-mobile"
+                    class="p-2 text-dark hover:text-primary mr-2"
+                    aria-label="Search"
+                >
+                    <Search className="w-6 h-6" />
+                </button>
+                <button
+                    id="mobile-menu-btn"
+                    class="p-2 text-dark hover:text-primary focus:outline-none"
+                >
+                    <Menu className="w-8 h-8" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile/Tablet Menu -->
+    <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg"
+    >
+        <div class="px-4 pt-2 pb-6 space-y-1">
+            <a
+                href="/"
+                class="block px-3 py-3 text-base font-medium text-dark hover:text-primary hover:bg-gray-50 rounded-md"
+                >Beranda</a
+            >
+            <a
+                href="/about"
+                class="block px-3 py-3 text-base font-medium text-dark hover:text-primary hover:bg-gray-50 rounded-md"
+                >Tentang Kami</a
+            >
+            <a
+                href="/services"
+                class="block px-3 py-3 text-base font-medium text-dark hover:text-primary hover:bg-gray-50 rounded-md"
+                >Paket Umroh</a
+            >
+            <a
+                href="/contact"
+                class="block px-3 py-3 text-base font-medium text-dark hover:text-primary hover:bg-gray-50 rounded-md"
+                >Kontak</a
+            >
+            <div class="pt-4 mt-2 border-t border-gray-100">
+                <a
+                    href="https://wa.me/6281222442100"
+                    target="_blank"
+                    class="flex items-center justify-center gap-2 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium"
+                >
+                    <Phone className="w-5 h-5" />
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    const mobileBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+    }
+
+    // Search trigger interaction
+    const searchTriggers = [
+        document.getElementById("search-trigger-bar"),
+        document.getElementById("search-trigger-mobile"),
+    ];
+
+    searchTriggers.forEach((btn) => {
+        btn?.addEventListener("click", () => {
+            if (typeof (window as any).toggleSearch === "function") {
+                (window as any).toggleSearch();
+            }
+        });
+    });
+</script>

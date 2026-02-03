@@ -1,0 +1,957 @@
+[
+    {
+        "title": "Paket Reguler 9 Hari",
+        "description": "Paket hemat perjalanan Umroh 9 hari dengan fasilitas hotel bintang 3. Harga mulai Rp 25.000.000.",
+        "url": "/#services",
+        "category": "Paket",
+        "price_numeric": 25000000,
+        "is_recommended": false,
+        "image_url": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop",
+        "keywords": [
+            "reguler",
+            "hemat",
+            "umroh",
+            "9 hari",
+            "murah",
+            "ekonomis",
+            "3 bintang",
+            "termurah",
+            "paling murah",
+            "biaya rendah",
+            "paket",
+            "ada",
+            "tersedia",
+            "slot"
+        ]
+    },
+    {
+        "title": "Paket VIP 12 Hari",
+        "description": "Perjalanan Umroh eksklusif 12 hari dengan fasilitas hotel bintang 4 dekat masjid. Harga Rp 35.000.000. Paket paling direkomendasikan untuk kenyamanan optimal.",
+        "url": "/#services",
+        "category": "Paket",
+        "price_numeric": 35000000,
+        "is_recommended": true,
+        "image_url": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop",
+        "keywords": [
+            "vip",
+            "menengah",
+            "umroh",
+            "12 hari",
+            "terlaris",
+            "4 bintang",
+            "rekomendasi",
+            "terbaik",
+            "paling laku",
+            "recommended",
+            "paket",
+            "ada",
+            "tersedia",
+            "slot"
+        ]
+    },
+    {
+        "title": "Paket Eksklusif 9 Hari",
+        "description": "Fasilitas premium hotel bintang 5 depan pelataran dan pesawat business class. Harga Rp 55.000.000.",
+        "url": "/#services",
+        "category": "Paket",
+        "price_numeric": 55000000,
+        "is_recommended": false,
+        "image_url": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop",
+        "keywords": [
+            "eksklusif",
+            "premium",
+            "mewah",
+            "umroh",
+            "9 hari",
+            "5 bintang",
+            "bisnis",
+            "paling mahal",
+            "termahal",
+            "terbaik",
+            "paket",
+            "ada",
+            "tersedia",
+            "slot"
+        ]
+    },
+    {
+        "title": "Alamat Kantor Al-Bait",
+        "description": "Kantor kami berlokasi di Jl. Siliwangi No. 123, Kota Cirebon, Jawa Barat 45123. Buka Senin-Sabtu pukul 08.00-17.00 WIB.",
+        "url": "/#contact",
+        "category": "Kontak",
+        "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
+        "keywords": [
+            "alamat",
+            "kantor",
+            "dimana",
+            "lokasi",
+            "office",
+            "cirebon",
+            "jalan",
+            "buka",
+            "jam"
+        ]
+    },
+    {
+        "title": "Ketersediaan Slot & Jadwal",
+        "description": "Alhamdulillah, kami masih memiliki slot tersedia untuk keberangkatan terdekat! Segera hubungi kami untuk mengamankan kursi Anda sebelum penuh.",
+        "url": "/#services",
+        "category": "Informasi",
+        "keywords": [
+            "masih ada",
+            "tersedia",
+            "slot",
+            "jadwal",
+            "keberangkatan",
+            "kapan",
+            "bulan",
+            "maret",
+            "april",
+            "kuota",
+            "kosong",
+            "penuh"
+        ]
+    },
+    {
+        "title": "Kepastian Harga & Biaya",
+        "description": "Harga paket umroh dapat berubah sewaktu-waktu mengikuti fluktuasi kurs Dollar, tarif maskapai, dan kebijakan hotel di Saudi. Kami sarankan segera DP untuk mengunci harga.",
+        "url": "/#faq",
+        "category": "Informasi",
+        "keywords": [
+            "harga berubah",
+            "biaya naik",
+            "kurs",
+            "dollar",
+            "kepastian harga",
+            "harga tetap",
+            "naik turun",
+            "pasti"
+        ]
+    },
+    {
+        "title": "Kualitas Layanan & Fasilitas",
+        "description": "Betul banget! Kami berkomitmen memberikan fasilitas terbaik dan pelayanan setulus hati untuk menjamin kenyamanan ibadah Anda di Tanah Suci.",
+        "url": "/#services",
+        "category": "Layanan",
+        "keywords": [
+            "keren",
+            "bagus",
+            "mantap",
+            "hebat",
+            "terbaik",
+            "fasilitas",
+            "pelayanan",
+            "puas",
+            "rekomendasi"
+        ]
+    },
+    {
+        "title": "Keamanan & Kepercayaan",
+        "description": "Kenyamanan dan keamanan jamaah adalah prioritas utama kami. Dengan izin resmi dan pembimbing berpengalaman, Anda bisa fokus beribadah tanpa ragu.",
+        "url": "/#legalitas",
+        "category": "Keamanan",
+        "keywords": [
+            "aman",
+            "percaya",
+            "terjamin",
+            "nyaman",
+            "legal",
+            "resmi",
+            "penipuan",
+            "khawatir"
+        ]
+    },
+    {
+        "title": "Legalitas Resmi Al-Bait",
+        "description": "Terdaftar resmi di Kemenag RI dengan SK PPIU No. 91204049913930001.",
+        "url": "/#legalitas",
+        "category": "Legalitas",
+        "keywords": [
+            "legalitas",
+            "ppiu",
+            "izin",
+            "resmi",
+            "sk",
+            "aman",
+            "terpercaya",
+            "sertifikasi",
+            "kemenag",
+            "nomor"
+        ]
+    },
+    {
+        "title": "Dokumen Pendaftaran Umroh",
+        "description": "Syarat dokumen utama: Paspor asli (minimal 2 kata nama), KTP asli, KK asli, Buku Nikah asli, Akta Lahir asli, dan Foto 4x6 (background putih, wajah 80%).",
+        "url": "/#faq",
+        "category": "Logistik",
+        "keywords": [
+            "dokumen",
+            "syarat",
+            "daftar",
+            "paspor",
+            "pendaftaran",
+            "persyaratan",
+            "foto",
+            "berkas"
+        ]
+    },
+    {
+        "title": "Vaksin Meningitis",
+        "description": "Vaksin Meningitis bersifat wajib bagi setiap jamaah umroh. Anda perlu membawa Buku Kuning Vaksin (ICV) saat keberangkatan.",
+        "url": "/#faq",
+        "category": "Informasi",
+        "keywords": [
+            "vaksin",
+            "meningitis",
+            "suntik",
+            "buku kuning",
+            "kesehatan",
+            "medis",
+            "icv"
+        ]
+    },
+    {
+        "title": "Fasilitas Perlengkapan",
+        "description": "Setiap jamaah mendapatkan: Koper, Tas Paspor, Kain Ihram (Laki-laki) / Mukena (Perempuan), Seragam Batik, Buku Doa, dan ID Card.",
+        "url": "/#faq",
+        "category": "Logistik",
+        "keywords": [
+            "perlengkapan",
+            "koper",
+            "seragam",
+            "batik",
+            "ihram",
+            "mukena",
+            "peralatan",
+            "bonus",
+            "dapat",
+            "gratis"
+        ]
+    },
+    {
+        "title": "Akomodasi Maskapai",
+        "description": "Kami menggunakan maskapai premium seperti Saudi Arabian Airlines, Garuda Indonesia, atau Emirates dengan penerbangan langsung (direct flight) atau maksimal 1x transit.",
+        "url": "/#services",
+        "category": "Fasilitas",
+        "keywords": [
+            "pesawat",
+            "maskapai",
+            "garuda",
+            "saudi",
+            "emirates",
+            "penerbangan",
+            "transit",
+            "direct"
+        ]
+    },
+    {
+        "title": "Hotel di Mekkah",
+        "description": "Hotel bintang 5 (Movenpick/Anjum), bintang 4 (Elaf Kinda/Retaj Al Hayat), atau bintang 3 (Fajr Al Badeea) dengan jarak sangat dekat ke Masjidil Haram.",
+        "url": "/#services",
+        "category": "Fasilitas",
+        "keywords": [
+            "hotel mekkah",
+            "penginapan",
+            "bintang 5",
+            "bintang 4",
+            "bintang 3",
+            "jarak hotel",
+            "movenpick",
+            "anjum"
+        ]
+    },
+    {
+        "title": "Hotel di Madinah",
+        "description": "Hotel pilihan seperti Pullman Zamzam, Dallah Taibah, atau Odst Madinah yang berjarak hanya beberapa langkah dari pintu masuk Masjid Nabawi.",
+        "url": "/#services",
+        "category": "Fasilitas",
+        "keywords": [
+            "hotel madinah",
+            "pullman",
+            "nabawi",
+            "penginapan madinah"
+        ]
+    },
+    {
+        "title": "Makan & Konsumsi",
+        "description": "Menu makanan Indonesia 3x sehari (prasmanan) disiapkan oleh katering berpengalaman untuk menjaga stamina jamaah.",
+        "url": "/#faq",
+        "category": "Fasilitas",
+        "keywords": [
+            "makan",
+            "catering",
+            "konsumsi",
+            "menu indonesia",
+            "sarapan",
+            "lunch",
+            "dinner"
+        ]
+    },
+    {
+        "title": "Ziarah & City Tour",
+        "description": "Ziarah di Madinah (Masjid Quba, Kebun Kurma, Jabal Uhud) dan di Mekkah (Jabal Tsur, Jabal Nur, Arafah, Muzdalifah, Mina).",
+        "url": "/#faq",
+        "category": "Kegiatan",
+        "keywords": [
+            "ziarah",
+            "tour",
+            "city tour",
+            "jalan-jalan",
+            "wisata religi",
+            "quba",
+            "uhud",
+            "kurma"
+        ]
+    },
+    {
+        "title": "Pembatalan & Refund",
+        "description": "Kebijakan pembatalan: Potongan biaya administrasi, tiket pesawat, dan provider visa sesuai dengan waktu pembatalan sebelum keberangkatan.",
+        "url": "/#faq",
+        "category": "Kebijakan",
+        "keywords": [
+            "batal",
+            "cancel",
+            "refund",
+            "pengembalian uang",
+            "uang kembali",
+            "potongan"
+        ]
+    },
+    {
+        "title": "Pendaftaran Online",
+        "description": "Anda bisa mendaftar secara online melalui formulir di website kami atau menghubungi admin via WhatsApp untuk panduan lengkap.",
+        "answer": "Hubungi admin WhatsApp untuk panduan pendaftaran lengkap.",
+        "url": "/#faq",
+        "category": "Prosedur",
+        "keywords": [
+            "daftar online",
+            "cara daftar",
+            "registrasi",
+            "form",
+            "formulir",
+            "gimana",
+            "bagaimana",
+            "bagaimana cara daftarnya",
+            "cara mendaftar",
+            "pendaftaran"
+        ]
+    },
+    {
+        "title": "Air Zamzam",
+        "description": "Setiap jamaah akan mendapatkan jatah 5 Liter Air Zamzam (sesuai regulasi maskapai/Saudi) yang diberikan saat tiba di bandara kepulangan.",
+        "url": "/#faq",
+        "category": "Logistik",
+        "keywords": [
+            "zamzam",
+            "air zamzam",
+            "oleh-oleh",
+            "5 liter"
+        ]
+    },
+    {
+        "title": "Umroh dengan Anak/Lansia",
+        "description": "Kami menyediakan layanan pendampingan khusus dan kursi roda (opsional) untuk memudahkan ibadah bagi lansia atau keluarga yang membawa anak.",
+        "url": "/#faq",
+        "category": "Layanan",
+        "keywords": [
+            "anak",
+            "lansia",
+            "bayi",
+            "kursi roda",
+            "pendamping",
+            "keluarga"
+        ]
+    },
+    {
+        "title": "Perbandingan: Reguler vs VIP",
+        "description": "Bedanya ada di jarak hotel. Reguler: Hotel bintang 3 (±500m dari Masjid). VIP: Hotel bintang 4/5 (±150m dari Masjid). Makanan dan pembimbing sama-sama standar terbaik.",
+        "url": "/#services",
+        "category": "Informasi",
+        "price_numeric": 0,
+        "is_recommended": false,
+        "image_url": "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=800&auto=format&fit=crop",
+        "keywords": [
+            "bandingkan",
+            "beda",
+            "bedanya apa",
+            "bagus mana",
+            "vs",
+            "jarak hotel",
+            "selisih",
+            "mending mana"
+        ]
+    },
+    {
+        "title": "Program Tabungan & Cicilan",
+        "description": "Bisa berangkat dulu bayar belakangan atau sistem tabungan. Kami bekerja sama dengan lembaga keuangan syariah resmi (Amitra/BSI) untuk pembiayaan umroh.",
+        "url": "/#finance",
+        "category": "Pembayaran",
+        "price_numeric": 0,
+        "is_recommended": false,
+        "image_url": "https://images.unsplash.com/photo-1579621970563-ebec7560eb3e?q=80&w=800&auto=format&fit=crop",
+        "keywords": [
+            "cicilan",
+            "kredit",
+            "angsuran",
+            "nabung",
+            "tabungan",
+            "dana talangan",
+            "nyicil",
+            "hutang",
+            "fintech",
+            "dp ringan"
+        ]
+    },
+    {
+        "title": "Profil Mutawwif (Pembimbing)",
+        "description": "Jamaah dibimbing langsung oleh Ustadz lulusan Universitas Timur Tengah yang fasih Bahasa Arab dan paham fiqih umroh sesuai sunnah.",
+        "url": "/#team",
+        "category": "Layanan",
+        "price_numeric": 0,
+        "is_recommended": true,
+        "image_url": "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?q=80&w=800&auto=format&fit=crop",
+        "keywords": [
+            "mutawif",
+            "pembimbing",
+            "ustadz",
+            "kyai",
+            "guide",
+            "pemandu",
+            "bimbingan",
+            "siapa yang bimbing",
+            "tour leader"
+        ]
+    },
+    {
+        "title": "Jadwal & Lokasi Manasik",
+        "description": "Manasik diadakan 2 kali. Pertama: Teori di hotel/aula di Indonesia (H-14). Kedua: Pemantapan praktik doa & tata cara sebelum keberangkatan.",
+        "answer": "Manasik di Indonesia H-14 dan pemantapan sebelum berangkat.",
+        "url": "/#services",
+        "category": "Kegiatan",
+        "price_numeric": 0,
+        "is_recommended": false,
+        "image_url": "",
+        "keywords": [
+            "manasik",
+            "latihan",
+            "praktik",
+            "belajar",
+            "persiapan",
+            "pengajian",
+            "briefing",
+            "doa",
+            "tata cara",
+            "jadwal",
+            "lokasi",
+            "dimana",
+            "jadwal manasik",
+            "kapan manasiknya",
+            "dimana manasiknya"
+        ]
+    },
+    {
+        "title": "Ketentuan Bagasi Pesawat",
+        "description": "Jatah bagasi tercatat biasanya 23kg - 30kg (tergantung maskapai) + 7kg kabin. Koper besar sudah kami sediakan yang sesuai standar maskapai.",
+        "url": "/#faq",
+        "category": "Logistik",
+        "price_numeric": 0,
+        "is_recommended": false,
+        "keywords": [
+            "bagasi",
+            "kilo",
+            "kg",
+            "berat koper",
+            "kabin",
+            "kelebihan muatan",
+            "barang bawaan",
+            "overweight"
+        ]
+    },
+    {
+        "title": "Internet & Kartu SIM Saudi",
+        "description": "Disarankan membeli paket Roaming dari provider Indonesia (Telkomsel/XL) atau membeli kartu SIM lokal (STC/Mobily) saat tiba di Bandara Madinah/Jeddah.",
+        "url": "/#faq",
+        "category": "Informasi",
+        "price_numeric": 0,
+        "is_recommended": false,
+        "keywords": [
+            "internet",
+            "wifi",
+            "kartu",
+            "sim card",
+            "sinyal",
+            "paket data",
+            "roaming",
+            "telpon",
+            "kuota"
+        ]
+    },
+    {
+        "title": "Cuaca & Pakaian",
+        "description": "Saudi bisa sangat panas (40°C+) atau dingin (15°C) tergantung musim. Disarankan membawa kacamata hitam, pelembab bibir, dan jaket jika berangkat musim dingin (Nov-Feb).",
+        "url": "/#faq",
+        "category": "Informasi",
+        "price_numeric": 0,
+        "is_recommended": false,
+        "keywords": [
+            "cuaca",
+            "panas",
+            "dingin",
+            "suhu",
+            "baju",
+            "pakaian",
+            "winter",
+            "musim",
+            "kacamata"
+        ]
+    },
+    {
+        "title": "Cara Tukar Uang (Riyal)",
+        "description": "Bisa tukar Rupiah ke Riyal di Money Changer Indonesia atau tarik tunai di ATM Arab Saudi (logo Visa/Mastercard). Hindari tukar di calo jalanan.",
+        "url": "/#faq",
+        "category": "Informasi",
+        "price_numeric": 0,
+        "is_recommended": false,
+        "keywords": [
+            "uang",
+            "duit",
+            "riyal",
+            "real",
+            "mata uang",
+            "tukar",
+            "atm",
+            "tarik tunai",
+            "tukar uang",
+            "cara tukar uang",
+            "money changer"
+        ]
+    },
+    {
+        "title": "Jumlah Jamaah per Grup",
+        "description": "Jumlah jamaah per grup biasanya antara 20-30 orang. Jika Anda ingin mengajukan permohonan khusus untuk jumlah lebih besar atau lebih kecil, silakan hubungi kami.",
+        "url": "/#faq",
+        "category": "Informasi",
+        "price_numeric": 0,
+        "is_recommended": false,
+        "keywords": [
+            "jumlah jamaah",
+            "jamaah",
+            "grup",
+            "jumlah orang",
+            "kumpulan",
+            "pengelompokan",
+            "berapa orang",
+            "besar kecil",
+            "team",
+            "rombongan",
+            "kelompok",
+            "group"
+        ]
+    },
+    {
+        "title": "Sejarah Umroh",
+        "description": "Umroh adalah ibadah sunnah yang dilakukan sejak zaman Nabi Ibrahim AS. Kata 'umroh' berarti 'berziarah' atau 'mengunjungi tempat suci'. Ibadah ini telah dilakukan oleh Nabi Muhammad SAW dan para sahabatnya.",
+        "url": "/about",
+        "category": "Pengetahuan",
+        "keywords": [
+            "sejarah umroh",
+            "asal mula",
+            "nabi ibrahim",
+            "sunnah",
+            "berziarah",
+            "tradisi",
+            "zaman dulu"
+        ]
+    },
+    {
+        "title": "Panduan Ibadah Umroh Lengkap",
+        "description": "Panduan lengkap ibadah umroh meliputi niat, ihram, tawaf, sai, dan tahallul. Pelajari tata cara yang benar untuk mendapatkan pahala maksimal dari ibadah Anda.",
+        "url": "/about",
+        "category": "Panduan",
+        "keywords": [
+            "panduan umroh",
+            "tata cara",
+            "niat",
+            "ihram",
+            "tawaf",
+            "sai",
+            "tahallul",
+            "cara ibadah",
+            "langkah-langkah"
+        ]
+    },
+    {
+        "title": "Tips Kesehatan Saat Umroh",
+        "description": "Persiapkan kesehatan Anda dengan vaksin meningitis, jaga stamina dengan makan teratur, hindari dehidrasi, dan gunakan sunscreen. Bawa obat-obatan pribadi dan konsultasi dokter sebelum berangkat.",
+        "url": "/faq",
+        "category": "Kesehatan",
+        "keywords": [
+            "tips kesehatan",
+            "vaksin",
+            "stamina",
+            "dehidrasi",
+            "sunscreen",
+            "obat",
+            "dokter",
+            "fisik",
+            "tubuh"
+        ]
+    },
+    {
+        "title": "Tempat Suci di Mekkah",
+        "description": "Masjidil Haram dengan Ka'bah sebagai pusat, Maqam Ibrahim, Zamzam, dan Jabal Rahmah. Pelajari sejarah dan keutamaan setiap tempat untuk memperdalam ibadah Anda.",
+        "url": "/about",
+        "category": "Tempat Suci",
+        "keywords": [
+            "mekkah",
+            "ka'bah",
+            "masjidil haram",
+            "maqam ibrahim",
+            "zamzam",
+            "jabah rahmah",
+            "tempat suci",
+            "sejarah tempat"
+        ]
+    },
+    {
+        "title": "Tempat Suci di Madinah",
+        "description": "Masjid Nabawi sebagai tempat peristirahatan Nabi Muhammad SAW, Raudhah, Masjid Quba, dan makam Baqi'. Kunjungi tempat-tempat ini untuk mendapatkan pahala berlipat.",
+        "url": "/about",
+        "category": "Tempat Suci",
+        "keywords": [
+            "madinah",
+            "masjid nabawi",
+            "raudhah",
+            "quba",
+            "baqi",
+            "makam",
+            "tempat suci",
+            "nabi muhammad"
+        ]
+    },
+    {
+        "title": "Doa-doa Umroh Penting",
+        "description": "Pelajari doa ihram, doa tawaf, doa sai, dan doa saat minum air zamzam. Doa-doa ini membantu meningkatkan kekhusyukan dan mendapatkan ampunan dari Allah SWT.",
+        "url": "/about",
+        "category": "Doa",
+        "keywords": [
+            "doa umroh",
+            "doa ihram",
+            "doa tawaf",
+            "doa sai",
+            "doa zamzam",
+            "bacaan",
+            "dzikir",
+            "wirid"
+        ]
+    },
+    {
+        "title": "Etika dan Adab Berumroh",
+        "description": "Jaga adab saat beribadah: hindari berbicara kotor, jaga kebersihan, hormati sesama jamaah, dan fokus pada ibadah. Etika ini menjadikan umroh Anda lebih bermakna.",
+        "url": "/about",
+        "category": "Etika",
+        "keywords": [
+            "etika umroh",
+            "adab",
+            "sopansantun",
+            "kebersihan",
+            "hormat",
+            "jamaah",
+            "berbicara",
+            "fokus ibadah"
+        ]
+    },
+    {
+        "title": "Persiapan Mental dan Spiritual",
+        "description": "Siapkan mental dengan membaca Al-Quran, berdoa, dan berniat ikhlas. Persiapan spiritual ini membantu Anda menghadapi tantangan perjalanan dan mendapatkan pahala maksimal.",
+        "url": "/about",
+        "category": "Persiapan",
+        "keywords": [
+            "persiapan mental",
+            "spiritual",
+            "ikhlas",
+            "al-quran",
+            "doa",
+            "niat",
+            "jiwa",
+            "rohani"
+        ]
+    },
+    {
+        "title": "Keutamaan Ibadah Umroh",
+        "description": "Umroh memiliki keutamaan besar: menghapus dosa, pahala seperti haji, dan kesempatan bertemu Allah. Ibadah ini juga memperkuat iman dan taqwa.",
+        "url": "/about",
+        "category": "Keutamaan",
+        "keywords": [
+            "keutamaan umroh",
+            "pahala",
+            "hapus dosa",
+            "seperti haji",
+            "iman",
+            "taqwa",
+            "manfaat",
+            "faedah"
+        ]
+    },
+    {
+        "title": "Musim Terbaik untuk Umroh",
+        "description": "Musim dingin (November-Februari) adalah waktu terbaik untuk umroh karena cuaca sejuk dan lebih sedikit jamaah. Hindari musim panas untuk kenyamanan ibadah.",
+        "url": "/faq",
+        "category": "Informasi",
+        "keywords": [
+            "musim umroh",
+            "waktu terbaik",
+            "dingin",
+            "panas",
+            "november",
+            "februari",
+            "cuaca",
+            "jamaah"
+        ]
+    },
+    {
+        "title": "Perbedaan Umroh dan Haji",
+        "description": "Haji adalah ibadah wajib yang dilakukan pada bulan Dzulhijjah, sementara umroh adalah sunnah yang bisa dilakukan kapan saja. Haji lebih kompleks dengan ritual tambahan.",
+        "url": "/about",
+        "category": "Pengetahuan",
+        "keywords": [
+            "beda umroh haji",
+            "perbedaan",
+            "wajib sunnah",
+            "dzulhijjah",
+            "ritual",
+            "kompleks",
+            "beda apa"
+        ]
+    },
+    {
+        "title": "Berapa Jumlah Jamaah per Grup?",
+        "description": "Jumlah jamaah per grup biasanya antara 20-30 orang untuk memastikan pelayanan optimal. Grup kecil (15-20 orang) lebih personal, sedangkan grup besar (30-40 orang) lebih ekonomis. Kami bisa menyesuaikan sesuai permintaan Anda.",
+        "answer": "20-30 orang per grup, bisa disesuaikan.",
+        "url": "/services",
+        "category": "Informasi Grup",
+        "keywords": [
+            "jumlah jamaah",
+            "berapa orang",
+            "grup",
+            "besar kecil",
+            "20-30 orang",
+            "personal",
+            "ekonomis",
+            "sesuai permintaan"
+        ]
+    },
+    {
+        "title": "Biaya Tambahan yang Mungkin Dikeluarkan",
+        "description": "Selain harga paket, Anda mungkin perlu biaya tambahan untuk: transportasi lokal (taksi/grab), oleh-oleh, tips untuk petugas, dan pengeluaran pribadi. Rata-rata biaya tambahan sekitar 2-3 juta per orang.",
+        "answer": "Rata-rata 2-3 juta per orang untuk transportasi, oleh-oleh, dan pengeluaran pribadi.",
+        "url": "/faq",
+        "category": "Biaya",
+        "keywords": [
+            "biaya tambahan",
+            "uang saku",
+            "transportasi",
+            "oleh-oleh",
+            "tips",
+            "pengeluaran",
+            "2-3 juta",
+            "tambahan"
+        ]
+    },
+    {
+        "title": "Apakah Bisa Berangkat Sendiri?",
+        "description": "Ya, Anda bisa berangkat umroh secara individu. Kami menyediakan paket personal dengan jadwal fleksibel. Minimum 1 orang, dengan biaya yang disesuaikan. Cocok untuk yang ingin privasi atau jadwal khusus.",
+        "answer": "Ya, bisa dengan paket personal minimum 1 orang.",
+        "url": "/services",
+        "category": "Paket Individu",
+        "keywords": [
+            "sendiri",
+            "individu",
+            "personal",
+            "1 orang",
+            "privasi",
+            "jadwal fleksibel",
+            "bisa solo"
+        ]
+    },
+    {
+        "title": "Persyaratan Umur untuk Umroh",
+        "description": "Tidak ada batas umur minimum, tapi anak di bawah 18 tahun harus didampingi wali. Untuk lansia di atas 65 tahun, disarankan membawa surat keterangan sehat dari dokter. Bayi dan anak kecil bisa ikut dengan persyaratan khusus.",
+        "answer": "Tidak ada batas minimum, anak <18 tahun wajib didampingi wali, lansia >65 tahun butuh surat dokter.",
+        "url": "/faq",
+        "category": "Persyaratan",
+        "keywords": [
+            "umur",
+            "anak",
+            "lansia",
+            "bayi",
+            "di bawah 18",
+            "di atas 65",
+            "surat dokter",
+            "persyaratan umur"
+        ]
+    },
+    {
+        "title": "Makanan Halal di Saudi Arabia",
+        "description": "Semua makanan yang kami sediakan sudah halal dan bersertifikat. Di Saudi, mayoritas restoran halal, tapi hindari makanan yang tidak jelas sumbernya. Bawa camilan halal dari Indonesia jika perlu.",
+        "answer": "Semua makanan kami halal bersertifikat, mayoritas restoran di Saudi juga halal.",
+        "url": "/faq",
+        "category": "Makanan",
+        "keywords": [
+            "halal",
+            "makanan",
+            "restoran",
+            "sertifikat",
+            "camilan",
+            "aman makan",
+            "halal certified"
+        ]
+    },
+    {
+        "title": "Cara Mengatasi Jet Lag",
+        "description": "Atur jam tidur 3-4 hari sebelum berangkat menyesuaikan waktu Saudi. Minum banyak air, hindari kafein, dan istirahat cukup di pesawat. Tubuh akan menyesuaikan dalam 2-3 hari.",
+        "answer": "Atur jam tidur 3-4 hari sebelumnya, minum air banyak, hindari kafein, istirahat di pesawat.",
+        "url": "/faq",
+        "category": "Kesehatan",
+        "keywords": [
+            "jet lag",
+            "jam tidur",
+            "waktu saudi",
+            "air",
+            "kafein",
+            "istirahat",
+            "menyesuaikan"
+        ]
+    },
+    {
+        "title": "Keamanan Wanita Saat Umroh",
+        "description": "Wanita harus selalu didampingi mahram saat beribadah. Di area suci, gunakan pakaian ihram yang sopan. Kami menyediakan bus terpisah dan petugas wanita untuk kenyamanan Anda.",
+        "answer": "Wanita wajib didampingi mahram, gunakan pakaian sopan, bus terpisah tersedia.",
+        "url": "/faq",
+        "category": "Keamanan",
+        "keywords": [
+            "wanita",
+            "mahram",
+            "pendamping",
+            "pakaian",
+            "bus terpisah",
+            "petugas wanita",
+            "kenyamanan"
+        ]
+    },
+    {
+        "title": "Durasi Optimal Menginap di Mekkah dan Madinah",
+        "description": "Optimal 4-5 hari di Madinah dan 5-7 hari di Mekkah. Ini memberikan waktu cukup untuk tawaf, sai, dan ziarah tanpa terburu-buru. Durasi bisa disesuaikan dengan paket Anda.",
+        "answer": "4-5 hari di Madinah, 5-7 hari di Mekkah.",
+        "url": "/services",
+        "category": "Durasi",
+        "keywords": [
+            "durasi",
+            "menginap",
+            "mekkah",
+            "madinah",
+            "4-5 hari",
+            "5-7 hari",
+            "optimal",
+            "sesuai paket"
+        ]
+    },
+    {
+        "title": "Apa yang Terjadi Jika Sakit Saat Umroh?",
+        "description": "Kami memiliki asuransi kesehatan dan kerja sama dengan klinik di Saudi. Dokter akan siaga 24 jam. Jika kondisi serius, akan dievakuasi ke rumah sakit terdekat. Obat-obatan pribadi wajib dibawa.",
+        "answer": "Ada asuransi kesehatan, dokter 24 jam, evakuasi jika serius, bawa obat pribadi.",
+        "url": "/faq",
+        "category": "Kesehatan",
+        "keywords": [
+            "sakit",
+            "asuransi",
+            "klinik",
+            "dokter",
+            "evakuasi",
+            "rumah sakit",
+            "obat"
+        ]
+    },
+    {
+        "title": "Assalamu'alaikum",
+        "description": "Wa'alaikumussalam Warahmatullahi Wabarakatuh. Ahlan wa sahlan! Semoga Allah mudahkan niat suci Anda ke Baitullah.",
+        "answer": "Wa'alaikumussalam. Ada yang bisa kami bantu untuk persiapan Umroh Anda?",
+        "url": "",
+        "category": "Sapaan",
+        "keywords": [
+            "assalamualaikum",
+            "assalammualakum",
+            "salam",
+            "assalamu'alaikum",
+            "asalamualaikum"
+        ]
+    },
+    {
+        "title": "Halo!",
+        "description": "Halo! Senang bertemu dengan Anda. Kami siap membantu mewujudkan perjalanan ibadah yang nyaman dan khusyuk.",
+        "answer": "Halo! Silakan sampaikan pertanyaan Anda seputar paket atau layanan kami.",
+        "url": "",
+        "category": "Sapaan",
+        "keywords": [
+            "halo",
+            "hai",
+            "hi",
+            "hello",
+            "holla",
+            "alo",
+            "tes"
+        ]
+    },
+    {
+        "title": "Selamat Pagi",
+        "description": "Selamat pagi! Awali hari dengan niat baik. Semoga hari Anda penuh berkah. Ada informasi Umroh yang sedang Anda cari?",
+        "answer": "Selamat pagi! Ada yang bisa kami bantu hari ini?",
+        "url": "",
+        "category": "Sapaan",
+        "keywords": [
+            "selamat pagi",
+            "pagi",
+            "good morning",
+            "met pagi"
+        ]
+    },
+    {
+        "title": "Selamat Siang",
+        "description": "Selamat siang! Semoga aktivitas Anda lancar hari ini. Jangan lupa istirahat sejenak. Kami siap melayani pertanyaan Anda.",
+        "answer": "Selamat siang! Silakan jika ada yang ingin ditanyakan seputar travel.",
+        "url": "",
+        "category": "Sapaan",
+        "keywords": [
+            "selamat siang",
+            "siang",
+            "good afternoon",
+            "met siang"
+        ]
+    },
+    {
+        "title": "Selamat Sore",
+        "description": "Selamat sore! Menjelang waktu istirahat, mungkin ini saat yang tepat merencanakan ibadah Umroh bersama keluarga.",
+        "answer": "Selamat sore! Ada yang bisa kami bantu seputar info paket?",
+        "url": "",
+        "category": "Sapaan",
+        "keywords": [
+            "selamat sore",
+            "sore",
+            "good afternoon",
+            "met sore"
+        ]
+    },
+    {
+        "title": "Selamat Malam",
+        "description": "Selamat malam! Semoga lelah hari ini menjadi lillah. Kami tetap online untuk membantu informasi pendaftaran Umroh.",
+        "answer": "Selamat malam! Silakan tinggalkan pesan atau pertanyaan Anda.",
+        "url": "",
+        "category": "Sapaan",
+        "keywords": [
+            "selamat malam",
+            "malam",
+            "good night",
+            "met malam"
+        ]
+    }
+]

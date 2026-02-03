@@ -1,0 +1,163 @@
+---
+import { MessageCircle } from "lucide-react";
+---
+
+<section
+    id="home"
+    class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden"
+>
+    <!-- Background Image with Professional Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img
+            src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2070&auto=format&fit=crop"
+            alt="Masjidil Haram Mecca"
+            class="w-full h-full object-cover"
+        />
+        <!-- Multi-layer Overlay for Premium Feel -->
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"
+        >
+        </div>
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-primary/20"
+        >
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 z-10 relative">
+        <div class="max-w-3xl">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 backdrop-blur-md border border-accent/30 text-accent-light font-bold tracking-wide text-xs md:text-sm mb-6 animate-fade-in-up"
+            >
+                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"
+                ></span>
+                <div class="flex flex-col">
+                    <span
+                        id="dynamic-greeting"
+                        class="text-accent-light font-bold leading-tight"
+                        >Layanan Umroh Resmi</span
+                    >
+                </div>
+            </div>
+
+            <h1
+                class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] drop-shadow-2xl animate-fade-in-up delay-100 mb-6"
+            >
+                Perjalanan Ibadah <br />
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-light to-accent"
+                    >Amanah & Nyaman</span
+                >
+            </h1>
+
+            <p
+                class="text-lg md:text-xl text-gray-100 max-w-xl leading-relaxed animate-fade-in-up delay-200 mb-10 drop-shadow-md"
+            >
+                Wujudkan impian ke Baitullah bersama Al-Bait Tour & Travel.
+                Layanan profesional, fasilitas terbaik, dan bimbingan ibadah
+                sesuai sunnah.
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row gap-4 items-start animate-fade-in-up delay-300"
+            >
+                <a
+                    href="https://wa.me/6281222442100?text=Assalamualaikum,%20saya%20berminat%20daftar%20umroh."
+                    target="_blank"
+                    class="flex items-center gap-3 bg-accent hover:bg-accent-light text-dark font-bold px-8 py-4 rounded-xl transition-all shadow-[0_10px_30px_rgba(212,175,55,0.4)] group relative overflow-hidden smart-cta-glow"
+                >
+                    <MessageCircle
+                        className="w-6 h-6 group-hover:rotate-12 transition-transform"
+                    />
+                    Daftar Sekarang
+                    <div
+                        class="absolute inset-0 bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"
+                    >
+                    </div>
+                </a>
+                <a
+                    href="/services"
+                    class="px-8 py-4 rounded-xl border-2 border-white/40 text-white hover:bg-white hover:text-primary transition-all font-bold backdrop-blur-sm shadow-xl"
+                >
+                    Lihat Paket Umroh
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block"
+    >
+        <div
+            class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1"
+        >
+            <div class="w-1 bg-accent/60 rounded-full h-3"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function updateGreeting() {
+        const greetingEl = document.getElementById("dynamic-greeting");
+        if (!greetingEl) return;
+
+        const hour = new Date().getHours();
+        let greeting = "";
+
+        if (hour >= 5 && hour < 11)
+            greeting = "Selamat Pagi, Siap Beribadah Ke Baitullah?";
+        else if (hour >= 11 && hour < 15)
+            greeting = "Selamat Siang, Wujudkan Impian Umroh Anda";
+        else if (hour >= 15 && hour < 18)
+            greeting = "Selamat Sore, Rencanakan Umroh Terbaik Bersama Kami";
+        else greeting = "Selamat Malam, Al-Bait Siap Membantu Ibadah Anda";
+
+        greetingEl.textContent = greeting;
+    }
+
+    // Run on load
+    updateGreeting();
+</script>
+
+<style>
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .delay-100 {
+        animation-delay: 0.1s;
+    }
+    .delay-200 {
+        animation-delay: 0.2s;
+    }
+    .delay-300 {
+        animation-delay: 0.3s;
+    }
+
+    .smart-cta-glow {
+        animation: breath 3s ease-in-out infinite;
+    }
+
+    @keyframes breath {
+        0%,
+        100% {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+        50% {
+            box-shadow:
+                0 10px 45px rgba(212, 175, 55, 0.7),
+                0 0 15px rgba(212, 175, 55, 0.3);
+            transform: scale(1.02);
+        }
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
