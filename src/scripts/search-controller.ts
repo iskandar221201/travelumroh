@@ -202,6 +202,29 @@ export class SearchController {
         this.scrollToBottom();
     }
 
+    private generateComparisonRows(packages: any[]): string {
+        // Get all unique feature labels
+        const allLabels = new Set<string>();
+        packages.forEach(pkg => {
+            pkg.features.forEach((f: any) => allLabels.add(f.label));
+        });
+
+        // Generate row for each feature
+        return Array.from(allLabels).map(label => {
+            const cells = packages.map(pkg => {
+                const feature = pkg.features.find((f: any) => f.label === label);
+                return feature ? feature.value : '-';
+            });
+
+            return `
+                <tr class="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+                    <td class="p-3 font-medium text-gray-700">${label}</td>
+                    ${cells.map(cell => `<td class="p-3 text-center text-sm text-gray-600">${cell}</td>`).join('')}
+                </tr>
+            `;
+        }).join('');
+    }
+
     private addAssistantMessage(query: string, result: SearchResult, save = true) {
         const { intent, results, confidence } = result;
         this.conversationContext.interactionCount++;
@@ -216,6 +239,35 @@ export class SearchController {
 
         let responseHTML = "";
         let extras = "";
+
+        // 📊 COMPARISON TABLE - Dynamic from search-data.json
+        if (result.comparison && result.comparison.packages.length > 0) {
+            responseHTML = `<p class="text-sm md:text-base font-medium mb-4">Berikut perbandingan lengkap paket umroh kami:</p>`;
+
+            const comparisonTable = `
+                <div class="overflow-x-auto -mx-6 md:mx-0">
+                    <table class="w-full min-w-[600px] text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-primary/10 to-accent/10">
+                                <th class="p-3 font-bold text-dark border-b-2 border-primary">Fitur</th>
+                                ${result.comparison.packages.map(pkg => `
+                                    <th class="p-3 font-bold text-dark border-b-2 border-primary text-center">
+                                        ${pkg.is_recommended ? '<span class="text-[8px] bg-accent text-dark px-2 py-0.5 rounded font-black uppercase block mb-1">Terlaris</span>' : ''}
+                                        <div class="text-sm">${pkg.name.replace('Paket ', '')}</div>
+                                        <div class="text-xs font-normal text-primary mt-1">${pkg.price}</div>
+                                    </th>
+                                `).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${this.generateComparisonRows(result.comparison.packages)}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+
+            extras = comparisonTable + extras;
+        }
 
         if (confidence < 30 && results.length > 0) {
             responseHTML = `<p class="text-xs text-gray-400 mb-2 italic">🤔 Saya kurang yakin, tapi mungkin ini yang Anda cari:</p>`;

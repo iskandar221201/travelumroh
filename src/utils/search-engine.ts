@@ -189,6 +189,7 @@ export class SearchEngine {
             isManasik: words.some(w => ['manasik', 'bimbingan', 'pelatihan', 'ihram', 'tawaf', 'sai'].includes(w)),
             isUrgent: words.some(w => ['cepat', 'segera', 'sekarang', 'urgent', 'booking', 'daftar'].includes(w)),
             isPricing: words.some(w => ['harga', 'biaya', 'bayar', 'murah', 'mahal', 'berapa'].includes(w)),
+            isComparison: words.some(w => ['beda', 'bedanya', 'perbandingan', 'compare', 'vs', 'bandingkan', 'perbedaan'].includes(w)),
         };
 
         Object.keys(entities).forEach(key => {
@@ -340,6 +341,9 @@ export class SearchEngine {
             ? `Halo! Saya tertarik dengan paket umroh. Bisa dibantu info lengkapnya?`
             : '';
 
+        // Generate comparison if requested
+        const comparisonData = processed.entities.isComparison ? this.generateComparison() : null;
+
         return {
             results: topMatches,
             intent: this.detectIntent(processed),
@@ -348,7 +352,8 @@ export class SearchEngine {
             shouldShowWhatsApp,
             whatsappMessage,
             queryCount: this.history.totalQueries,
-            packageQueryCount: this.history.packageQueries
+            packageQueryCount: this.history.packageQueries,
+            comparison: comparisonData
         };
     }
 
@@ -492,6 +497,47 @@ export class SearchEngine {
         if (url.includes('about')) return 'Informasi';
         if (url.includes('contact')) return 'Kontak';
         return 'Informasi';
+    }
+
+    // Generate dynamic package comparison
+    private generateComparison() {
+        // Extract all packages from search data
+        const packages = this.searchData.filter(item =>
+            item.category === 'Paket' &&
+            (item.title.includes('Paket Reguler') || item.title.includes('Paket VIP') || item.title.includes('Paket Eksklusif'))
+        ).sort((a, b) => (a.price_numeric || 0) - (b.price_numeric || 0)); // Sort by price
+
+        if (packages.length === 0) return null;
+
+        // Extract features dynamically from descriptions
+        const extractFeatures = (description: string) => {
+            const features = [];
+            if (description.includes('hotel bintang 3')) features.push({ label: 'Hotel', value: '⭐⭐⭐ Bintang 3' });
+            if (description.includes('hotel bintang 4')) features.push({ label: 'Hotel', value: '⭐⭐⭐⭐ Bintang 4' });
+            if (description.includes('hotel bintang 5')) features.push({ label: 'Hotel', value: '⭐⭐⭐⭐⭐ Bintang 5' });
+
+            if (description.includes('9 hari')) features.push({ label: 'Durasi', value: '9 Hari' });
+            if (description.includes('12 hari')) features.push({ label: 'Durasi', value: '12 Hari' });
+
+            if (description.includes('makan 3x')) features.push({ label: 'Meals', value: '3x Sehari' });
+            if (description.includes('Fullboard')) features.push({ label: 'Meals', value: 'Fullboard Premium' });
+
+            if (description.includes('city tour')) features.push({ label: 'Bonus', value: '✅ City Tour' });
+            if (description.includes('Thaif')) features.push({ label: 'Tour', value: '✅ Thaif' });
+
+            return features;
+        };
+
+        return {
+            packages: packages.map(pkg => ({
+                name: pkg.title,
+                price: pkg.price_numeric ? `Rp ${(pkg.price_numeric / 1000000).toFixed(1)} Juta` : 'Hubungi Admin',
+                features: extractFeatures(pkg.description),
+                description: pkg.description,
+                url: pkg.url,
+                is_recommended: pkg.is_recommended
+            }))
+        };
     }
 
     private detectIntent(processed: any): string {

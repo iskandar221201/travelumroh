@@ -25,4 +25,14 @@ export interface SearchResult {
     whatsappMessage?: string;
     queryCount?: number;
     packageQueryCount?: number;
+    comparison?: {
+        packages: {
+            name: string;
+            price: string;
+            features: { label: string; value: string }[];
+            description: string;
+            url: string;
+            is_recommended?: boolean;
+        }[];
+    } | null;
 }
