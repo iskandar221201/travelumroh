@@ -1,10 +1,10 @@
 [
     {
         "title": "Paket Reguler 9 Hari",
-        "description": "Paket hemat perjalanan Umroh 9 hari dengan fasilitas hotel bintang 3. Harga mulai Rp 25.000.000.",
+        "description": "Paket hemat perjalanan Umroh 9 hari dengan fasilitas hotel bintang 3. Harga Rp 28.5 Juta. Termasuk tiket PP, makan 3x sehari, dan pembimbing berpengalaman.",
         "url": "/#services",
         "category": "Paket",
-        "price_numeric": 25000000,
+        "price_numeric": 28500000,
         "is_recommended": false,
         "image_url": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop",
         "keywords": [
@@ -21,15 +21,16 @@
             "paket",
             "ada",
             "tersedia",
-            "slot"
+            "slot",
+            "28.5 juta"
         ]
     },
     {
         "title": "Paket VIP 12 Hari",
-        "description": "Perjalanan Umroh eksklusif 12 hari dengan fasilitas hotel bintang 4 dekat masjid. Harga Rp 35.000.000. Paket paling direkomendasikan untuk kenyamanan optimal.",
+        "description": "Perjalanan Umroh eksklusif 12 hari dengan fasilitas hotel bintang 4 dekat masjid. Harga Rp 35.5 Juta. Paket paling terlaris dengan fasilitas premium dan city tour Thaif.",
         "url": "/#services",
         "category": "Paket",
-        "price_numeric": 35000000,
+        "price_numeric": 35500000,
         "is_recommended": true,
         "image_url": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop",
         "keywords": [
@@ -46,15 +47,17 @@
             "paket",
             "ada",
             "tersedia",
-            "slot"
+            "slot",
+            "35.5 juta",
+            "thaif"
         ]
     },
     {
         "title": "Paket Eksklusif 9 Hari",
-        "description": "Fasilitas premium hotel bintang 5 depan pelataran dan pesawat business class. Harga Rp 55.000.000.",
+        "description": "Fasilitas premium hotel bintang 5 depan pelataran dan pesawat business class. Harga Rp 42.5 Juta. Layanan private transport dan dokumentasi eksklusif.",
         "url": "/#services",
         "category": "Paket",
-        "price_numeric": 55000000,
+        "price_numeric": 42500000,
         "is_recommended": false,
         "image_url": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop",
         "keywords": [
@@ -71,13 +74,15 @@
             "paket",
             "ada",
             "tersedia",
-            "slot"
+            "slot",
+            "42.5 juta",
+            "business class"
         ]
     },
     {
         "title": "Alamat Kantor Al-Bait",
-        "description": "Kantor kami berlokasi di Jl. Siliwangi No. 123, Kota Cirebon, Jawa Barat 45123. Buka Senin-Sabtu pukul 08.00-17.00 WIB.",
-        "url": "/#contact",
+        "description": "Kantor kami berlokasi di Jl. Raya Banjarwangunan, RT.001/RW.004, Kec. Mundu, Kab. Cirebon, Jawa Barat 45171. Buka Senin-Jumat (08:30-16:30) dan Sabtu (08:30-13:00).",
+        "url": "/contact",
         "category": "Kontak",
         "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
         "keywords": [
@@ -89,7 +94,9 @@
             "cirebon",
             "jalan",
             "buka",
-            "jam"
+            "jam",
+            "banjarwangunan",
+            "mundu"
         ]
     },
     {
@@ -113,8 +120,8 @@
         ]
     },
     {
-        "title": "Kepastian Harga & Biaya",
-        "description": "Harga paket umroh dapat berubah sewaktu-waktu mengikuti fluktuasi kurs Dollar, tarif maskapai, dan kebijakan hotel di Saudi. Kami sarankan segera DP untuk mengunci harga.",
+        "title": "Kepastian Harga & Biaya Alat",
+        "description": "Harga paket umroh dapat berubah mengikuti kurs Dollar dan kebijakan maskapai/hotel. Namun, kami selalu berupaya memberikan informasi perubahan seawal mungkin kepada jamaah.",
         "url": "/#faq",
         "category": "Informasi",
         "keywords": [
@@ -126,6 +133,21 @@
             "harga tetap",
             "naik turun",
             "pasti"
+        ]
+    },
+    {
+        "title": "Perubahan Jadwal Keberangkatan",
+        "description": "Jadwal bisa mengalami penyesuaian tergantung kebijakan maskapai dan visa. Kami berkomitmen memberikan update secepatnya jika ada perubahan.",
+        "url": "/#faq",
+        "category": "Informasi",
+        "keywords": [
+            "jadwal berubah",
+            "kapan berangkat",
+            "tunda",
+            "undur",
+            "perubahan jadwal",
+            "visa",
+            "maskapai"
         ]
     },
     {
@@ -163,7 +185,7 @@
     },
     {
         "title": "Legalitas Resmi Al-Bait",
-        "description": "Terdaftar resmi di Kemenag RI dengan SK PPIU No. 91204049913930001.",
+        "description": "Terdaftar resmi di Kemenag RI dengan SK PPIU No. 91204049913930001. Keamanan dan kenyamanan Anda adalah prioritas kami.",
         "url": "/#legalitas",
         "category": "Legalitas",
         "keywords": [
@@ -176,12 +198,13 @@
             "terpercaya",
             "sertifikasi",
             "kemenag",
-            "nomor"
+            "nomor",
+            "91204049913930001"
         ]
     },
     {
         "title": "Dokumen Pendaftaran Umroh",
-        "description": "Syarat dokumen utama: Paspor asli (minimal 2 kata nama), KTP asli, KK asli, Buku Nikah asli, Akta Lahir asli, dan Foto 4x6 (background putih, wajah 80%).",
+        "description": "Syarat dokumen utama: Paspor asli (masa berlaku min 7 bulan), KTP asli, KK asli, Buku Nikah asli, Akta Lahir asli, dan Foto terbaru. Tim kami siap membantu verifikasi berkas Anda.",
         "url": "/#faq",
         "category": "Logistik",
         "keywords": [
@@ -192,7 +215,9 @@
             "pendaftaran",
             "persyaratan",
             "foto",
-            "berkas"
+            "berkas",
+            "7 bulan",
+            "surat nikah"
         ]
     },
     {
@@ -382,8 +407,25 @@
         ]
     },
     {
+        "title": "Sistem Pembayaran Umroh",
+        "description": "Pembayaran dimulai dengan DP untuk booking seat. Pelunasan dilakukan maksimal 30 hari sebelum keberangkatan melalui transfer bank resmi perusahaan.",
+        "url": "/#faq",
+        "category": "Pembayaran",
+        "keywords": [
+            "bayar",
+            "transfer",
+            "dp",
+            "pelunasan",
+            "kapan bayar",
+            "rekening",
+            "pembayaran",
+            "30 hari",
+            "down payment"
+        ]
+    },
+    {
         "title": "Program Tabungan & Cicilan",
-        "description": "Bisa berangkat dulu bayar belakangan atau sistem tabungan. Kami bekerja sama dengan lembaga keuangan syariah resmi (Amitra/BSI) untuk pembiayaan umroh.",
+        "description": "Tersedia sistem tabungan atau cicilan melalui lembaga keuangan syariah resmi (Amitra/BSI) untuk memudahkan niat suci Anda.",
         "url": "/#faq",
         "category": "Pembayaran",
         "price_numeric": 0,
@@ -423,10 +465,9 @@
         ]
     },
     {
-        "title": "Jadwal & Lokasi Manasik",
-        "description": "Manasik diadakan 2 kali. Pertama: Teori di hotel/aula di Indonesia (H-14). Kedua: Pemantapan praktik doa & tata cara sebelum keberangkatan.",
-        "answer": "Manasik di Indonesia H-14 dan pemantapan sebelum berangkat.",
-        "url": "/#services",
+        "title": "Bimbingan Manasik Umroh",
+        "description": "Kami menyelenggarakan manasik umroh (minimal 1x teori & praktik) H-14 sebelum keberangkatan agar jamaah memahami tata cara ibadah sesuai sunnah.",
+        "url": "/#faq",
         "category": "Kegiatan",
         "price_numeric": 0,
         "is_recommended": false,
@@ -446,7 +487,8 @@
             "dimana",
             "jadwal manasik",
             "kapan manasiknya",
-            "dimana manasiknya"
+            "dimana manasiknya",
+            "teori"
         ]
     },
     {
@@ -952,6 +994,108 @@
             "malam",
             "good night",
             "met malam"
+        ]
+    },
+    {
+        "title": "Pengalaman Al-Bait Tour",
+        "description": "Al-Bait Tour & Travel memiliki lebih dari 10 tahun pengalaman dalam melayani jamaah Umroh dan Haji dengan profesionalisme tinggi.",
+        "url": "/about",
+        "category": "Informasi",
+        "keywords": [
+            "pengalaman",
+            "berapa tahun",
+            "sejak kapan",
+            "lama",
+            "berdiri",
+            "track record",
+            "10 tahun"
+        ]
+    },
+    {
+        "title": "Jumlah Jamaah Terlayani",
+        "description": "Alhamdulillah, kami telah melayani lebih dari 5.000+ jamaah dengan tingkat kepuasan 100%.",
+        "url": "/about",
+        "category": "Informasi",
+        "keywords": [
+            "jumlah jamaah",
+            "berapa orang",
+            "jamaah berangkat",
+            "5000",
+            "terlayani",
+            "testimoni"
+        ]
+    },
+    {
+        "title": "Testimoni H. Ahmad Fauzi",
+        "description": "Muthawifnya sangat membimbing, hotelnya dekat, dan makanannya enak-enak. Sangat recommended untuk warga Cirebon.",
+        "url": "/#testimonials",
+        "category": "Testimoni",
+        "keywords": [
+            "ahmad fauzi",
+            "review",
+            "kata orang",
+            "rekomendasi",
+            "makanannya enak",
+            "hotel dekat"
+        ]
+    },
+    {
+        "title": "Testimoni Hj. Siti Aminah",
+        "description": "Pelayanan sangat ramah dan profesional. Sejak pendaftaran sampai kepulangan diurus dengan baik.",
+        "url": "/#testimonials",
+        "category": "Testimoni",
+        "keywords": [
+            "siti aminah",
+            "sangat ramah",
+            "profesional",
+            "diurus dengan baik",
+            "impian"
+        ]
+    },
+    {
+        "title": "Testimoni Budi Santoso",
+        "description": "Pengalaman pertama umroh yang tak terlupakan. Fasilitas sesuai dengan yang dijanjikan. Ibadah jadi lebih khusyuk.",
+        "url": "/#testimonials",
+        "category": "Testimoni",
+        "keywords": [
+            "budi santoso",
+            "tak terlupakan",
+            "fasilitas janji",
+            "khusyuk",
+            "pembimbing sabar"
+        ]
+    },
+    {
+        "title": "Telepon & WhatsApp Al-Bait",
+        "description": "Hubungi kami di 0231-222461 (Kantor) atau 0812 2244 2100 (WhatsApp) untuk konsultasi gratis.",
+        "url": "/contact",
+        "category": "Kontak",
+        "keywords": [
+            "nomor",
+            "telepon",
+            "whatsapp",
+            "wa",
+            "chat",
+            "hubungi",
+            "telfon",
+            "hp"
+        ]
+    },
+    {
+        "title": "Misi & Nilai Al-Bait",
+        "description": "Melayani Tamu Allah dengan Ikhlas & Profesional. Kami berkomitmen memberikan bimbingan sesuai Sunnah dan fasilitas terbaik untuk kekhusyukan ibadah Anda.",
+        "url": "/about",
+        "category": "Informasi",
+        "keywords": [
+            "misi",
+            "visi",
+            "nilai",
+            "ikhlas",
+            "profesional",
+            "bimbingan sunnah",
+            "tujuan",
+            "semboyan",
+            "moto"
         ]
     }
 ]
