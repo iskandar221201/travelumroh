@@ -447,12 +447,12 @@
         ]
     },
     {
-        "title": "Bimbingan Manasik Umroh",
-        "description": "Kami menyelenggarakan manasik umroh (minimal 1x teori & praktik) H-14 sebelum keberangkatan agar jamaah memahami tata cara ibadah sesuai sunnah.",
+        "title": "Bimbingan Manasik Umroh - GRATIS untuk Semua Jamaah!",
+        "description": "🎁 BONUS EKSKLUSIF! Kami menyelenggarakan manasik umroh GRATIS (minimal 1x teori & praktik lengkap) H-14 sebelum keberangkatan. Dibimbing langsung oleh Ustadz berpengalaman lulusan Timur Tengah! Jamaah akan paham sempurna tata cara ihram, tawaf, sai, dan tahallul sesuai sunnah. Manasik ini WAJIB diikuti agar ibadah Anda maksimal dan berkah. Investasi ilmu untuk pahala berlipat!",
         "url": "/#faq",
         "category": "Kegiatan",
         "price_numeric": 0,
-        "is_recommended": false,
+        "is_recommended": true,
         "image_url": "",
         "keywords": [
             "manasik",
@@ -470,7 +470,80 @@
             "jadwal manasik",
             "kapan manasiknya",
             "dimana manasiknya",
-            "teori"
+            "teori",
+            "gratis",
+            "bonus",
+            "ustadz",
+            "bimbingan gratis",
+            "pelatihan",
+            "ihram",
+            "tawaf",
+            "sai",
+            "tahallul",
+            "rukun umroh",
+            "cara umroh",
+            "umroh yang benar"
+        ]
+    },
+    {
+        "title": "Tata Cara Ihram - Panduan Manasik",
+        "description": "Ihram adalah niat dan pakaian khusus untuk memulai ibadah umroh. Pelajari cara memakai ihram yang benar, bacaan niat, dan larangan-larangan saat berihram. Kami akan ajarkan semua detail ini di manasik GRATIS sebelum keberangkatan!",
+        "url": "/#faq",
+        "category": "Manasik",
+        "keywords": [
+            "ihram",
+            "niat umroh",
+            "pakaian ihram",
+            "larangan ihram",
+            "cara ihram",
+            "miqat",
+            "talbiyah",
+            "labbaik"
+        ]
+    },
+    {
+        "title": "Tata Cara Tawaf - Panduan Manasik",
+        "description": "Tawaf adalah mengelilingi Ka'bah sebanyak 7 putaran. Ketahui mulai dari Hajar Aswad, doa setiap putaran, dan adab saat tawaf. Jangan khawatir! Pembimbing kami akan dampingi Anda langsung di Tanah Suci.",
+        "url": "/#faq",
+        "category": "Manasik",
+        "keywords": [
+            "tawaf",
+            "ka'bah",
+            "hajar aswad",
+            "7 putaran",
+            "mengelilingi kabah",
+            "doa tawaf",
+            "rukun tawaf"
+        ]
+    },
+    {
+        "title": "Tata Cara Sa'i - Panduan Manasik",
+        "description": "Sa'i adalah berlari-lari kecil antara bukit Safa dan Marwah sebanyak 7 kali. Pelajari jalur yang benar, doa-doa penting, dan makna di balik ibadah ini. Manasik kami memastikan Anda siap 100%!",
+        "url": "/#faq",
+        "category": "Manasik",
+        "keywords": [
+            "sai",
+            "sa'i",
+            "safa marwah",
+            "safa",
+            "marwah",
+            "7 kali",
+            "berlari kecil",
+            "doa sai"
+        ]
+    },
+    {
+        "title": "Tahallul & Selesai Umroh - Panduan Manasik",
+        "description": "Tahallul adalah tahap akhir umroh dengan mencukur atau memotong rambut. Setelah ini, semua larangan ihram sudah halal kembali. Alhamdulillah, umroh Anda sempurna! Kami pastikan setiap jamaah paham tahapan ini dengan jelas.",
+        "url": "/#faq",
+        "category": "Manasik",
+        "keywords": [
+            "tahallul",
+            "cukur rambut",
+            "potong rambut",
+            "selesai umroh",
+            "halal kembali",
+            "tahalul"
         ]
     },
     {
