@@ -23,6 +23,14 @@
             "tersedia",
             "slot",
             "28.5 juta"
+        ],
+        "features": [
+            "Tiket Pesawat PP (Economy)",
+            "Hotel *3 (Mekkah & Madinah)",
+            "Makan 3x Sehari (Menu Indo)",
+            "Visa Umroh & Asuransi",
+            "Handling Bandara & Transportasi Bus AC",
+            "Muthawif Berpengalaman"
         ]
     },
     {
@@ -44,6 +52,15 @@
             "terbaik",
             "paling laku",
             "thaif"
+        ],
+        "features": [
+            "Tiket Pesawat PP (Direct)",
+            "Hotel *4 (Dekat Masjid)",
+            "Makan 3x Sehari (Fullboard)",
+            "Visa Umroh & Asuransi Premium",
+            "Handling Prioritas & Lounge",
+            "Muthawif & Tour Leader",
+            "City Tour Thaif"
         ]
     },
     {
@@ -64,6 +81,15 @@
             "bisnis",
             "termahal",
             "business class"
+        ],
+        "features": [
+            "Tiket Pesawat PP (Business)",
+            "Hotel *5 (Depan Pelataran)",
+            "Makan 3x Sehari (International)",
+            "Visa Umroh & Asuransi Platinum",
+            "Private Transport (GMC/Alphard)",
+            "Private Muthawif",
+            "Dokumentasi Eksklusif"
         ]
     },
     {
@@ -370,7 +396,7 @@
     },
     {
         "title": "Perbandingan: Reguler vs VIP",
-        "description": "Bedanya ada di jarak hotel. Reguler: Hotel bintang 3 (±500m dari Masjid). VIP: Hotel bintang 4/5 (±150m dari Masjid). Makanan dan pembimbing sama-sama standar terbaik.",
+        "description": "Bedanya ada di fasilitas. Reguler: Hotel *3, Bus AC. VIP: Hotel *4 (Dekat Masjid), Direct Flight, Lounge & City Tour Thaif.",
         "url": "/#services",
         "category": "Informasi",
         "price_numeric": 0,
@@ -991,12 +1017,17 @@
         "category": "Sapaan",
         "keywords": [
             "halo",
+            "hallo",
             "hai",
             "hi",
+            "hy",
+            "hey",
             "hello",
             "holla",
             "alo",
-            "tes"
+            "tes",
+            "test",
+            "haii"
         ]
     },
     {
@@ -1152,6 +1183,31 @@
             "tujuan",
             "semboyan",
             "moto"
+        ]
+    },
+    {
+        "title": "Nama Travel Kami - Al-Bait Tour & Travel",
+        "description": "Nama resmi perusahaan kami adalah Al-Bait Tour & Travel. Kami adalah travel umroh dan haji yang berkantor di Cirebon dengan lisensi resmi PPIU Kemenag RI.",
+        "answer": "Nama travel kami adalah Al-Bait Tour & Travel, terdaftar resmi sebagai penyelenggara umroh dan haji di Kemenag RI.",
+        "url": "/about",
+        "category": "Informasi",
+        "keywords": [
+            "nama travel",
+            "nama travelnya",
+            "siapa nama travel",
+            "apa nama travel",
+            "nama perusahaan",
+            "al-bait",
+            "albait",
+            "al bait",
+            "namanya apa",
+            "siapa",
+            "nama apa",
+            "identitas",
+            "siapa ini",
+            "ini travel apa",
+            "travel apaan",
+            "tour travel"
         ]
     }
 ]

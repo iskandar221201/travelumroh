@@ -167,13 +167,12 @@ const quickLinks = [
                 <div
                     class="relative flex items-center gap-2 bg-gray-50 border border-transparent rounded-2xl px-4 py-2 focus-within:bg-white transition-all"
                 >
-                    <input
-                        type="text"
+                    <textarea
                         id="search-input"
-                        autocomplete="off"
+                        rows="1"
                         placeholder="Tanyakan sesuatu..."
-                        class="w-full bg-transparent border-none focus:ring-0 text-dark placeholder:text-gray-400 py-2 sm:py-3"
-                    />
+                        class="w-full bg-transparent border-none focus:ring-0 text-dark placeholder:text-gray-400 py-3 sm:py-3 resize-none max-h-32 scrollbar-hide"
+                    ></textarea>
                     <button
                         id="send-btn"
                         class="w-10 h-10 md:w-12 md:h-12 bg-primary text-accent rounded-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20"

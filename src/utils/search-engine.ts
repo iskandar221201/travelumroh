@@ -7,12 +7,18 @@ export class SearchEngine {
     // @ts-ignore
     private nlp: any;
     private fuse: any;
-    private history: {
-        lastCategory: string | null;
-        lastIntents: string[][];
-        detectedEntities: Set<string>;
-        packageQueries: number; // Track how many times user asks about packages
-        totalQueries: number; // Total search count
+    private context: {
+        history: { role: 'user' | 'assistant', content: string, timestamp: number, intent?: string }[];
+        lastTopic: string | null;
+        lastPackageContext: string | null; // Track specific package user was interested in
+        userPreferences: {
+            budget?: 'economy' | 'premium' | 'luxury';
+            duration?: 'short' | 'long';
+        };
+        stats: {
+            packageQueries: number;
+            totalQueries: number;
+        }
     };
     private keywordFuse: any;
     private CORE_KEYWORDS = [
@@ -108,12 +114,15 @@ export class SearchEngine {
         this.Fuse = Fuse;
         this.nlp = nlp;
 
-        this.history = {
-            lastCategory: null,
-            lastIntents: [],
-            detectedEntities: new Set(),
-            packageQueries: 0,
-            totalQueries: 0
+        this.context = {
+            history: [],
+            lastTopic: null,
+            lastPackageContext: null,
+            userPreferences: {},
+            stats: {
+                packageQueries: 0,
+                totalQueries: 0
+            }
         };
 
         this.fuse = Fuse ? new Fuse(searchData, {
@@ -193,7 +202,12 @@ export class SearchEngine {
         };
 
         Object.keys(entities).forEach(key => {
-            if ((entities as any)[key]) this.history.detectedEntities.add(key);
+            // @ts-ignore
+            if (entities[key]) {
+                // Update context based on detected entities
+                if (key === 'isVIP') this.context.userPreferences.budget = 'luxury';
+                if (key === 'isReguler') this.context.userPreferences.budget = 'economy';
+            }
         });
 
         return entities;
@@ -248,7 +262,18 @@ export class SearchEngine {
         if (processed.entities.isUrgent && item.category === 'Paket') score += 20;
         if (processed.entities.isPricing && item.category === 'Paket') score += 20;
 
-        if (this.history.lastCategory === item.category) score += 10;
+        // Context-aware boosting
+        // 1. Boost based on previous topic
+        if (this.context.lastTopic === item.category) score += 15;
+
+        // 2. Boost based on user preferences (learned from context)
+        if (this.context.userPreferences.budget === 'luxury' && (item.title.includes('VIP') || item.title.includes('Eksklusif'))) score += 20;
+        if (this.context.userPreferences.budget === 'economy' && item.title.includes('Reguler')) score += 20;
+
+        // 3. Follow-up handling: If user asks about price/detail and we have a package context
+        if (this.context.lastPackageContext && (processed.entities.isPricing || processed.entities.isComparison)) {
+            if (item.title === this.context.lastPackageContext) score += 50; // MASSIVE boost for the specific package in context
+        }
 
         // Intent-based boosting (Massive boost if item matches detected intent)
         const intent = this.detectIntent(processed);
@@ -258,11 +283,6 @@ export class SearchEngine {
         if (intent === 'manasik' && (item.category === 'Manasik' || item.title.toLowerCase().includes('manasik'))) score += 50;
         if (intent === 'booking' && (item.category === 'Paket' || item.category === 'Pembayaran')) score += 35;
 
-        // Context-aware boosting (if last interaction was about VIP, boost VIP items)
-        this.history.detectedEntities.forEach(entity => {
-            if (entity === 'isVIP' && item.title.includes('VIP')) score += 10;
-            if (entity === 'isReguler' && item.title.includes('Reguler')) score += 10;
-        });
 
         // Direct keyword hit on title/category (Very important for single word queries)
         processed.tokens.forEach((token: string) => {
@@ -295,8 +315,12 @@ export class SearchEngine {
         finalResults.sort((a, b) => b.score - a.score);
 
         if (finalResults.length > 0) {
-            this.history.lastCategory = finalResults[0].item.category;
-            this.history.lastIntents.push(processed.tokens);
+            this.context.lastTopic = finalResults[0].item.category;
+
+            // If result is a package, set it as active context for follow-up questions
+            if (finalResults[0].item.category === 'Paket') {
+                this.context.lastPackageContext = finalResults[0].item.title;
+            }
         }
 
         let topMatches = finalResults
@@ -330,13 +354,35 @@ export class SearchEngine {
         }
 
         // 🎯 SALES INTELLIGENCE: Track conversation for WhatsApp CTA
-        this.history.totalQueries++;
+        this.context.stats.totalQueries++;
         if (processed.isPackageQuery) {
-            this.history.packageQueries++;
+            this.context.stats.packageQueries++;
+        }
+
+        // Add to history
+        this.context.history.push({
+            role: 'user',
+            content: query,
+            timestamp: Date.now(),
+            intent: this.detectIntent(processed)
+        });
+
+        // Smart Response Generation for Implicit Context
+        // E.g. "yang itu berapa?" -> refers to last package context
+        const isFollowUp = this.detectFollowUp(query);
+        if (isFollowUp && this.context.lastPackageContext) {
+            // Force search for the context item if simple price query
+            const contextItem = this.searchData.find(i => i.title === this.context.lastPackageContext);
+            if (contextItem) {
+                // Reinject context item to top if relevant
+                if (!topMatches.find(m => m.title === contextItem.title)) {
+                    topMatches.unshift(contextItem);
+                }
+            }
         }
 
         // Trigger WhatsApp CTA after multiple package queries
-        const shouldShowWhatsApp = this.history.packageQueries >= 2 || this.history.totalQueries >= 3;
+        const shouldShowWhatsApp = this.context.stats.packageQueries >= 2 || this.context.stats.totalQueries >= 4;
         const whatsappMessage = shouldShowWhatsApp
             ? `Halo! Saya tertarik dengan paket umroh. Bisa dibantu info lengkapnya?`
             : '';
@@ -351,10 +397,17 @@ export class SearchEngine {
             confidence: Math.max(confidence, topMatches.length > 0 ? 50 : 0),
             shouldShowWhatsApp,
             whatsappMessage,
-            queryCount: this.history.totalQueries,
-            packageQueryCount: this.history.packageQueries,
+            queryCount: this.context.stats.totalQueries,
+            packageQueryCount: this.context.stats.packageQueries,
             comparison: comparisonData
         };
+    }
+
+    // Smart Follow-up Detection
+    private detectFollowUp(query: string): boolean {
+        const followUpPatterns = ['itu', 'tadi', 'yang ini', 'yang itu', 'harganya', 'biayanya', 'fasilitasnya', 'tersebut'];
+        const words = query.toLowerCase().split(/\s+/);
+        return words.some(w => followUpPatterns.includes(w));
     }
 
     // Search through dynamic page content
@@ -509,30 +562,13 @@ export class SearchEngine {
 
         if (packages.length === 0) return null;
 
-        // Extract features dynamically from descriptions
-        const extractFeatures = (description: string) => {
-            const features = [];
-            if (description.includes('hotel bintang 3')) features.push({ label: 'Hotel', value: '⭐⭐⭐ Bintang 3' });
-            if (description.includes('hotel bintang 4')) features.push({ label: 'Hotel', value: '⭐⭐⭐⭐ Bintang 4' });
-            if (description.includes('hotel bintang 5')) features.push({ label: 'Hotel', value: '⭐⭐⭐⭐⭐ Bintang 5' });
-
-            if (description.includes('9 hari')) features.push({ label: 'Durasi', value: '9 Hari' });
-            if (description.includes('12 hari')) features.push({ label: 'Durasi', value: '12 Hari' });
-
-            if (description.includes('makan 3x')) features.push({ label: 'Meals', value: '3x Sehari' });
-            if (description.includes('Fullboard')) features.push({ label: 'Meals', value: 'Fullboard Premium' });
-
-            if (description.includes('city tour')) features.push({ label: 'Bonus', value: '✅ City Tour' });
-            if (description.includes('Thaif')) features.push({ label: 'Tour', value: '✅ Thaif' });
-
-            return features;
-        };
-
         return {
             packages: packages.map(pkg => ({
                 name: pkg.title,
                 price: pkg.price_numeric ? `Rp ${(pkg.price_numeric / 1000000).toFixed(1)} Juta` : 'Hubungi Admin',
-                features: extractFeatures(pkg.description),
+                features: pkg.features
+                    ? pkg.features.slice(0, 4).map(f => ({ label: 'Fitur', value: f }))
+                    : [{ label: 'Deskripsi', value: pkg.description }],
                 description: pkg.description,
                 url: pkg.url,
                 is_recommended: pkg.is_recommended

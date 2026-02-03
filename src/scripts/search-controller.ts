@@ -4,7 +4,7 @@ import type { SearchDataItem, SearchResult } from "../types/search";
 export class SearchController {
     private engine: SearchEngine;
     private overlay: HTMLElement | null;
-    private input: HTMLInputElement | null;
+    private input: HTMLTextAreaElement | null;
     private sendBtn: HTMLElement | null;
     private closeBtn: HTMLElement | null;
     private chatContainer: HTMLElement | null;
@@ -34,7 +34,7 @@ export class SearchController {
         this.whatsappNumber = whatsappNumber;
 
         this.overlay = document.getElementById("search-overlay");
-        this.input = document.getElementById("search-input") as HTMLInputElement;
+        this.input = document.getElementById("search-input") as HTMLTextAreaElement;
         this.sendBtn = document.getElementById("send-btn");
         this.closeBtn = document.getElementById("close-search");
         this.chatContainer = document.getElementById("chat-container");
@@ -51,7 +51,18 @@ export class SearchController {
     private initEventListeners() {
         if (this.input) {
             this.input.addEventListener("keydown", (e) => {
-                if (e.key === "Enter") this.performAction();
+                if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    this.performAction();
+                }
+            });
+
+            // Auto-resize logic
+            this.input.addEventListener("input", () => {
+                if (this.input) {
+                    this.input.style.height = "auto";
+                    this.input.style.height = this.input.scrollHeight + "px";
+                }
             });
         }
 
@@ -451,6 +462,7 @@ export class SearchController {
         if (!query.trim()) return;
 
         this.input.value = "";
+        this.input.style.height = "auto"; // Reset height
         this.addUserMessage(query);
         this.showTyping();
 

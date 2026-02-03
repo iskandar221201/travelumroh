@@ -7,6 +7,7 @@ export interface SearchDataItem {
     price_numeric?: number;
     is_recommended?: boolean;
     image_url?: string;
+    features?: string[];
     answer?: string;
 }
 
