@@ -384,7 +384,7 @@
     {
         "title": "Program Tabungan & Cicilan",
         "description": "Bisa berangkat dulu bayar belakangan atau sistem tabungan. Kami bekerja sama dengan lembaga keuangan syariah resmi (Amitra/BSI) untuk pembiayaan umroh.",
-        "url": "/#finance",
+        "url": "/#faq",
         "category": "Pembayaran",
         "price_numeric": 0,
         "is_recommended": false,
@@ -405,7 +405,7 @@
     {
         "title": "Profil Mutawwif (Pembimbing)",
         "description": "Jamaah dibimbing langsung oleh Ustadz lulusan Universitas Timur Tengah yang fasih Bahasa Arab dan paham fiqih umroh sesuai sunnah.",
-        "url": "/#team",
+        "url": "/#about",
         "category": "Layanan",
         "price_numeric": 0,
         "is_recommended": true,
@@ -583,7 +583,7 @@
     {
         "title": "Tips Kesehatan Saat Umroh",
         "description": "Persiapkan kesehatan Anda dengan vaksin meningitis, jaga stamina dengan makan teratur, hindari dehidrasi, dan gunakan sunscreen. Bawa obat-obatan pribadi dan konsultasi dokter sebelum berangkat.",
-        "url": "/faq",
+        "url": "/#faq",
         "category": "Kesehatan",
         "keywords": [
             "tips kesehatan",
@@ -696,7 +696,7 @@
     {
         "title": "Musim Terbaik untuk Umroh",
         "description": "Musim dingin (November-Februari) adalah waktu terbaik untuk umroh karena cuaca sejuk dan lebih sedikit jamaah. Hindari musim panas untuk kenyamanan ibadah.",
-        "url": "/faq",
+        "url": "/#faq",
         "category": "Informasi",
         "keywords": [
             "musim umroh",
@@ -745,7 +745,7 @@
         "title": "Biaya Tambahan yang Mungkin Dikeluarkan",
         "description": "Selain harga paket, Anda mungkin perlu biaya tambahan untuk: transportasi lokal (taksi/grab), oleh-oleh, tips untuk petugas, dan pengeluaran pribadi. Rata-rata biaya tambahan sekitar 2-3 juta per orang.",
         "answer": "Rata-rata 2-3 juta per orang untuk transportasi, oleh-oleh, dan pengeluaran pribadi.",
-        "url": "/faq",
+        "url": "/#faq",
         "category": "Biaya",
         "keywords": [
             "biaya tambahan",
@@ -778,7 +778,7 @@
         "title": "Persyaratan Umur untuk Umroh",
         "description": "Tidak ada batas umur minimum, tapi anak di bawah 18 tahun harus didampingi wali. Untuk lansia di atas 65 tahun, disarankan membawa surat keterangan sehat dari dokter. Bayi dan anak kecil bisa ikut dengan persyaratan khusus.",
         "answer": "Tidak ada batas minimum, anak <18 tahun wajib didampingi wali, lansia >65 tahun butuh surat dokter.",
-        "url": "/faq",
+        "url": "/#faq",
         "category": "Persyaratan",
         "keywords": [
             "umur",
@@ -795,7 +795,7 @@
         "title": "Makanan Halal di Saudi Arabia",
         "description": "Semua makanan yang kami sediakan sudah halal dan bersertifikat. Di Saudi, mayoritas restoran halal, tapi hindari makanan yang tidak jelas sumbernya. Bawa camilan halal dari Indonesia jika perlu.",
         "answer": "Semua makanan kami halal bersertifikat, mayoritas restoran di Saudi juga halal.",
-        "url": "/faq",
+        "url": "/#faq",
         "category": "Makanan",
         "keywords": [
             "halal",
@@ -811,7 +811,7 @@
         "title": "Cara Mengatasi Jet Lag",
         "description": "Atur jam tidur 3-4 hari sebelum berangkat menyesuaikan waktu Saudi. Minum banyak air, hindari kafein, dan istirahat cukup di pesawat. Tubuh akan menyesuaikan dalam 2-3 hari.",
         "answer": "Atur jam tidur 3-4 hari sebelumnya, minum air banyak, hindari kafein, istirahat di pesawat.",
-        "url": "/faq",
+        "url": "/#faq",
         "category": "Kesehatan",
         "keywords": [
             "jet lag",
@@ -827,7 +827,7 @@
         "title": "Keamanan Wanita Saat Umroh",
         "description": "Wanita harus selalu didampingi mahram saat beribadah. Di area suci, gunakan pakaian ihram yang sopan. Kami menyediakan bus terpisah dan petugas wanita untuk kenyamanan Anda.",
         "answer": "Wanita wajib didampingi mahram, gunakan pakaian sopan, bus terpisah tersedia.",
-        "url": "/faq",
+        "url": "/#faq",
         "category": "Keamanan",
         "keywords": [
             "wanita",
@@ -860,7 +860,7 @@
         "title": "Apa yang Terjadi Jika Sakit Saat Umroh?",
         "description": "Kami memiliki asuransi kesehatan dan kerja sama dengan klinik di Saudi. Dokter akan siaga 24 jam. Jika kondisi serius, akan dievakuasi ke rumah sakit terdekat. Obat-obatan pribadi wajib dibawa.",
         "answer": "Ada asuransi kesehatan, dokter 24 jam, evakuasi jika serius, bawa obat pribadi.",
-        "url": "/faq",
+        "url": "/#faq",
         "category": "Kesehatan",
         "keywords": [
             "sakit",
