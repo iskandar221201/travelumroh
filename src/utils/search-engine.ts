@@ -28,7 +28,8 @@ export class SearchEngine {
         'syarat': ['dokumen', 'berkas', 'file', 'akta', 'nikah', 'kk', 'ktp'],
         'biaya': ['harga', 'tarif', 'bayar', 'duit', 'uang', 'mahal', 'murah'],
         'lokasi': ['alamat', 'kantor', 'dimana', 'maps', 'cirebon', 'mundu'],
-        'layanan': ['fasilitas', 'fitur', 'sarana', 'dapat', 'apa'],
+        'layanan': ['fasilitas', 'fitur', 'sarana', 'dapat', 'apa', 'servis', 'service', 'keunggulan'],
+        'kontak': ['hubungi', 'wa', 'whatsapp', 'nomor', 'telfon', 'telepon', 'admin', 'cs', 'customer service'],
         'pendaftaran': ['daftar', 'join', 'registrasi', 'gimana'],
         'murah': ['hemat', 'ekonomis', 'promo', 'terjangkau', 'miring'],
         'eksklusif': ['mewah', 'premium', 'high-end', 'business'],
@@ -128,6 +129,12 @@ export class SearchEngine {
         if (processed.entities.isLocation && item.category === 'Kontak') score += 15;
 
         if (this.history.lastCategory === item.category) score += 5;
+
+        // Direct keyword hit on title/category (Very important for single word queries)
+        processed.tokens.forEach((token: string) => {
+            if (item.title.toLowerCase().includes(token)) score += 15;
+            if (item.category.toLowerCase().includes(token)) score += 20;
+        });
 
         return score;
     }

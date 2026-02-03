@@ -135,6 +135,7 @@
         "url": "/#services",
         "category": "Layanan",
         "keywords": [
+            "layanan",
             "keren",
             "bagus",
             "mantap",
@@ -358,6 +359,7 @@
         "url": "/#faq",
         "category": "Layanan",
         "keywords": [
+            "layanan",
             "anak",
             "lansia",
             "bayi",
@@ -432,6 +434,7 @@
         "is_recommended": true,
         "image_url": "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?q=80&w=800&auto=format&fit=crop",
         "keywords": [
+            "layanan",
             "mutawif",
             "pembimbing",
             "ustadz",
@@ -1050,6 +1053,7 @@
         "url": "/contact",
         "category": "Kontak",
         "keywords": [
+            "kontak",
             "nomor",
             "telepon",
             "whatsapp",
