@@ -187,11 +187,8 @@ export class SearchEngine {
     private preprocess(query: string) {
         const rawWords = query.toLowerCase().replace(/[^\w\s]/g, '').split(/\s+/).filter(w => w.length > 1);
 
-        // Apply synonym normalization first
-        const normalizedWords = rawWords.map(w => this.normalizeSynonyms(w));
-
-        // Then auto-correct
-        const correctedWords = normalizedWords.map(w => this.autoCorrect(w));
+        // Auto-correct
+        const correctedWords = rawWords.map(w => this.autoCorrect(w));
         const filteredWords = correctedWords.filter(w => !this.stopWords.has(w));
 
         // Semantic expansion
@@ -200,16 +197,11 @@ export class SearchEngine {
             if (this.semanticMap[w]) expansion.push(...this.semanticMap[w]);
         });
 
-        // Detect phrase patterns
-        const phrases = this.detectPhrases(filteredWords);
-
         return {
             original: query,
             tokens: filteredWords,
             expanded: [...new Set([...filteredWords, ...expansion])],
-            entities: this.extractEntities(filteredWords),
-            phrases: phrases,
-            hasMultiWordIntent: phrases.length > 0
+            entities: this.extractEntities(filteredWords)
         }
     }
 
@@ -230,19 +222,6 @@ export class SearchEngine {
         if (processed.tokens.length > 1) {
             const combined = processed.tokens.join(' ');
             if (item.title.toLowerCase().includes(combined)) score += 20;
-        }
-
-        // Phrase pattern boosting (SMART!)
-        if (processed.phrases && processed.phrases.length > 0) {
-            processed.phrases.forEach((phrase: any) => {
-                if (phrase.intent === 'pricing' && item.category === 'Paket') score += phrase.boost;
-                if (phrase.intent === 'contact' && item.category === 'Kontak') score += phrase.boost;
-                if (phrase.intent === 'registration' && (item.category === 'Prosedur' || item.title.toLowerCase().includes('daftar'))) score += phrase.boost;
-                if (phrase.intent === 'booking' && item.category === 'Paket') score += phrase.boost;
-                if (phrase.intent === 'location' && item.category === 'Kontak') score += phrase.boost;
-                if (phrase.intent === 'budget_package' && item.title.toLowerCase().includes('reguler')) score += phrase.boost;
-                if (phrase.intent === 'premium_package' && item.title.toLowerCase().includes('vip')) score += phrase.boost;
-            });
         }
 
         // Entity-based boosting
