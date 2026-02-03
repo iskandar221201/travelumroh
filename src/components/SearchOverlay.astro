@@ -503,10 +503,13 @@ const WHATSAPP_NUMBER = "6281234567890";
             }
             conversationContext.lastMatchedItem = topResult;
         } else {
-            responseHTML = `<p class="text-sm md:text-base">Pertanyaan menarik! Hubungi tim kami untuk info lebih detail. Sementara itu, cek **Paket Unggulan** kami:</p>`;
-            results = searchData
-                .filter((r) => r.is_recommended || r.category === "Paket")
-                .slice(0, 2);
+            responseHTML = `<p class="text-sm md:text-base">Mohon tunggu sebentar, saya akan sambungkan Anda langsung ke WhatsApp Customer Service kami untuk informasi detail mengenai <strong>"${query}"</strong>... 🚀</p>`;
+            results = [];
+
+            setTimeout(() => {
+                const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=Assalamu'alaikum CS Al-Bait, saya ingin menanyakan tentang: ${encodeURIComponent(query)}`;
+                window.open(waUrl, "_blank");
+            }, 1500);
         }
 
         // Add Image to Response if Available (for all items unless handled specifically)
