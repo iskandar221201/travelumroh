@@ -21,4 +21,8 @@ export interface SearchResult {
         isContact: boolean;
     };
     confidence: number;
+    shouldShowWhatsApp?: boolean;
+    whatsappMessage?: string;
+    queryCount?: number;
+    packageQueryCount?: number;
 }

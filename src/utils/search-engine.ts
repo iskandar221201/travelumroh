@@ -11,6 +11,8 @@ export class SearchEngine {
         lastCategory: string | null;
         lastIntents: string[][];
         detectedEntities: Set<string>;
+        packageQueries: number; // Track how many times user asks about packages
+        totalQueries: number; // Total search count
     };
     private keywordFuse: any;
     private CORE_KEYWORDS = [
@@ -110,6 +112,8 @@ export class SearchEngine {
             lastCategory: null,
             lastIntents: [],
             detectedEntities: new Set(),
+            packageQueries: 0,
+            totalQueries: 0
         };
 
         this.fuse = Fuse ? new Fuse(searchData, {
@@ -157,6 +161,16 @@ export class SearchEngine {
         return matrix[str2.length][str1.length];
     }
 
+    // Check if query is about packages (for sales tracking)
+    private isPackageRelated(words: string[]): boolean {
+        const packageKeywords = [
+            'paket', 'harga', 'biaya', 'bayar', 'murah', 'mahal',
+            'vip', 'reguler', 'eksklusif', 'premium', 'hemat',
+            'booking', 'daftar', 'pesan', 'berapa', 'promo'
+        ];
+        return words.some(w => packageKeywords.includes(w));
+    }
+
     // Advanced auto-correct with fuzzy matching
     private autoCorrect(word: string): string {
         for (const [correct, typos] of Object.entries(this.phoneticMap)) {
@@ -201,7 +215,8 @@ export class SearchEngine {
             original: query,
             tokens: filteredWords,
             expanded: [...new Set([...filteredWords, ...expansion])],
-            entities: this.extractEntities(filteredWords)
+            entities: this.extractEntities(filteredWords),
+            isPackageQuery: this.isPackageRelated(filteredWords)
         }
     }
 
@@ -313,11 +328,27 @@ export class SearchEngine {
             }
         }
 
+        // 🎯 SALES INTELLIGENCE: Track conversation for WhatsApp CTA
+        this.history.totalQueries++;
+        if (processed.isPackageQuery) {
+            this.history.packageQueries++;
+        }
+
+        // Trigger WhatsApp CTA after multiple package queries
+        const shouldShowWhatsApp = this.history.packageQueries >= 2 || this.history.totalQueries >= 3;
+        const whatsappMessage = shouldShowWhatsApp
+            ? `Halo! Saya tertarik dengan paket umroh. Bisa dibantu info lengkapnya?`
+            : '';
+
         return {
             results: topMatches,
             intent: this.detectIntent(processed),
             entities: processed.entities,
-            confidence: Math.max(confidence, topMatches.length > 0 ? 50 : 0)
+            confidence: Math.max(confidence, topMatches.length > 0 ? 50 : 0),
+            shouldShowWhatsApp,
+            whatsappMessage,
+            queryCount: this.history.totalQueries,
+            packageQueryCount: this.history.packageQueries
         };
     }
 
